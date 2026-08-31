@@ -1,3 +1,599 @@
 
-<h1>Staging — under construction</h1>
+<h1><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carin Madden — Cybersecurity Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F3EEE2;
+    --panel: #FBF8F1;
+    --panel-border: #E5DCC7;
+    --text: #332C22;
+    --text-dim: #7A6F5C;
+    --line: #E5DCC7;
+    --accent: #7FB6A0;
+    --accent-dim: #E4F0EA;
+    --accent-border: #C3E0D4;
+    --secondary: #C99A78;
+    --secondary-dim: #F3E7DA;
+    --secondary-border: #E4CBB2;
+    --link: #4F8570;
+  }
+
+  .accent-bar{
+    height: 4px;
+    width: 100%;
+    background: var(--accent);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--link); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--link);
+    outline-offset: 3px;
+  }
+
+  h1, h2, h3{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text);
+  }
+
+  .wrap{
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Nav ---------- */
+  nav{
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: rgba(243,238,226,0.92);
+    backdrop-filter: blur(6px);
+    z-index: 10;
+  }
+  nav .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .nav-name{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .nav-links{
+    display: flex;
+    gap: 24px;
+    font-size: 0.92rem;
+  }
+  .nav-links a{
+    color: var(--text-dim);
+  }
+  .nav-links a:hover{ color: var(--accent); }
+
+  /* ---------- Case file header ---------- */
+  header.case{
+    padding: 56px 0 40px;
+    border-bottom: 1px solid var(--line);
+  }
+  .status-tag{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--link);
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-border);
+    padding: 5px 12px;
+    border-radius: 3px;
+    margin-bottom: 22px;
+  }
+  .status-dot{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .status-tag--clay{
+    color: #9C6A46;
+    background: var(--secondary-dim);
+    border-color: var(--secondary-border);
+  }
+  .status-tag--clay .status-dot{ background: var(--secondary); }
+  header.case h1{
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  header.case .role-line{
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    margin-bottom: 28px;
+  }
+  .case-fields{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .case-field{
+    background: var(--panel);
+    padding: 16px 18px;
+    border-top: 3px solid var(--accent);
+  }
+  .case-field .label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .case-field .value{
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  /* ---------- Sections ---------- */
+  section{
+    padding: 56px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  section:last-of-type{ border-bottom: none; }
+  section h2{
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  .section-sub{
+    color: var(--text-dim);
+    font-size: 0.98rem;
+    margin-bottom: 32px;
+    max-width: 62ch;
+  }
+
+  /* ---------- About / Goals ---------- */
+  .about-grid{
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 40px;
+  }
+  .about-grid p{ color: var(--text); margin: 0 0 14px; max-width: 60ch; }
+  .goals-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 2px solid var(--accent-dim);
+  }
+  .goals-list li{
+    position: relative;
+    padding: 4px 0 20px 22px;
+    color: var(--text);
+    font-size: 0.96rem;
+  }
+  .goals-list li::before{
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 9px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  .goals-list h3{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  /* ---------- Skills ---------- */
+  .skills-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+  }
+  .skill-card{
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-left: 3px solid var(--swatch, var(--accent));
+    border-radius: 4px;
+    padding: 20px 22px;
+  }
+  .skill-card h3{
+    font-size: 1.02rem;
+    margin-bottom: 12px;
+    color: var(--swatch, var(--accent));
+  }
+  .skill-card ul{
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+  .skill-card li{ margin-bottom: 6px; }
+  .skill-card li:last-child{ margin-bottom: 0; }
+
+  .tools-row{
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tool-chip{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--link);
+    background: var(--accent-dim);
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+
+  /* ---------- Featured project ---------- */
+  .featured{
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-top: 4px solid var(--secondary);
+    border-radius: 6px;
+    padding: 32px;
+  }
+  .featured .status-tag{ margin-bottom: 18px; }
+  .featured h3{
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    color: #9C6A46;
+  }
+  .featured p{
+    color: var(--text);
+    max-width: 66ch;
+    margin: 0 0 20px;
+  }
+  .report-fields{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    margin-bottom: 22px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .report-fields .label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .report-fields .value{ font-size: 0.92rem; }
+
+  /* ---------- Repository ---------- */
+  .repo-intro{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .repo-link-btn{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.88rem;
+    color: var(--text);
+    background: var(--accent);
+    border: 1px solid #6BA48D;
+    padding: 9px 16px;
+    border-radius: 3px;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .repo-link-btn:hover{ text-decoration: none; opacity: 0.85; }
+
+  .tree{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.88rem;
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    padding: 8px 0;
+  }
+  .tree-dir{
+    padding: 10px 22px;
+    color: var(--text);
+    font-weight: 500;
+    border-top: 1px solid var(--panel-border);
+    border-left: 3px solid var(--accent);
+  }
+  .tree-dir:first-child{ border-top: none; }
+  .tree-sub{
+    padding: 8px 22px 8px 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .tree-sub a{ color: var(--text); }
+  .tree-sub a:hover{ color: var(--accent); }
+  .tree-sub .desc{
+    color: var(--text-dim);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.84rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding: 40px 0 56px;
+  }
+  footer .wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer .foot-links{
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+  }
+  footer .foot-note{
+    color: var(--text-dim);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 700px){
+    .about-grid{ grid-template-columns: 1fr; }
+    header.case{ padding-top: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="accent-bar"></div>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">Carin Madden</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#project">Project</a>
+      <a href="#repo">Repository</a>
+    </div>
+  </div>
+</nav>
+
+<header class="case">
+  <div class="wrap">
+    <div class="status-tag"><span class="status-dot"></span>Status: Open — actively pursuing SOC / IR / GRC roles</div>
+    <h1>Carin Madden</h1>
+    <div class="role-line">Cybersecurity bootcamp student, building toward SOC Analyst, Incident Response, and GRC work.</div>
+
+    <div class="case-fields">
+      <div class="case-field">
+        <div class="label">Targeting</div>
+        <div class="value">SOC Analyst · Incident Response · GRC</div>
+      </div>
+      <div class="case-field">
+        <div class="label">Currently learning</div>
+        <div class="value">Cybersecurity bootcamp, applied to financial-institution security</div>
+      </div>
+      <div class="case-field">
+        <div class="label">Certification</div>
+        <div class="value">CompTIA Security+ — in progress</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="section-sub">Where I'm coming from, and what I'm working toward.</p>
+
+    <div class="about-grid">
+      <div>
+        <p>I'm currently in a cybersecurity bootcamp that's expanding on my working knowledge of cybersecurity in financial institutions. I'm building toward a role as a SOC Analyst, Incident Responder, or in GRC.</p>
+        <p>My interests sit around SOC tooling, threat detection and alert triage, network traffic analysis, malware analysis, threat intelligence, EDR tools, and risk assessment and management.</p>
+        <p>My GitHub repository is where I document real-time progress — labs, writeups, and reference material — as I build toward that career.</p>
+      </div>
+      <div>
+        <h3>Goals</h3>
+        <ul class="goals-list">
+          <li>Land a SOC Analyst, Incident Response, or GRC role</li>
+          <li>Complete CompTIA Security+ by the end of the year</li>
+          <li>Document real-time progress publicly through my repository</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills at a glance</h2>
+    <p class="section-sub">Organized by the areas I've worked hands-on in through labs and coursework.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Network Security</h3>
+        <ul>
+          <li>Identifying and exploiting common network vulnerabilities</li>
+          <li>Defending network protocols and authentication mechanisms</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Linux &amp; Windows Administration</h3>
+        <ul>
+          <li>Hardening Linux systems — user accounts, file permissions, system config</li>
+          <li>Implementing security policies on Linux and Windows</li>
+          <li>Hardening Windows Servers</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Virtualization &amp; Infrastructure Security</h3>
+        <ul>
+          <li>Identifying virtualization-specific threats</li>
+          <li>Securing enterprise virtualization environments</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Cryptography &amp; PKI</h3>
+        <ul>
+          <li>Applied cryptography fundamentals</li>
+          <li>Building an internal Certificate Authority and implementing TLS</li>
+          <li>Investigating and diagnosing TLS misconfigurations</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tools-row">
+      <span class="tool-chip">Linux (CLI, permissions, hardening)</span>
+      <span class="tool-chip">Windows Server</span>
+      <span class="tool-chip">VirtualBox</span>
+      <span class="tool-chip">Microsoft Azure</span>
+      <span class="tool-chip">Kali</span>
+      <span class="tool-chip">Ubuntu</span>
+    </div>
+  </div>
+</section>
+
+<section id="project">
+  <div class="wrap">
+    <h2>Featured project</h2>
+    <p class="section-sub">The lab I'm most proud of so far.</p>
+
+    <div class="featured">
+      <div class="status-tag status-tag--clay"><span class="status-dot"></span>Closed — findings documented</div>
+      <h3>Internal Certificate Authority &amp; TLS Hardening</h3>
+      <!-- EDIT ME: replace this paragraph with your own 2-3 sentence description of the project you're proudest of. -->
+      <p>I stood up an internal Certificate Authority from scratch and used it to issue and deploy TLS certificates across a lab environment, then went back through the setup looking for misconfigurations — weak cipher suites, certificate chain issues, expired or self-signed certs being trusted incorrectly. Working through both sides, building it and then trying to break it, gave me a much clearer picture of how PKI actually fails in practice, not just how it's supposed to work.</p>
+
+      <div class="report-fields">
+        <div>
+          <div class="label">Category</div>
+          <div class="value">Cryptography &amp; PKI</div>
+        </div>
+        <div>
+          <div class="label">Tools</div>
+          <div class="value">OpenSSL, Kali, VirtualBox</div>
+        </div>
+        <div>
+          <div class="label">Repo folder</div>
+          <div class="value"><a href="https://github.com/YOUR-USERNAME/cybersecurity-portfolio/tree/main/security/tls-audits">security/tls-audits</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="repo">
+  <div class="wrap">
+    <div class="repo-intro">
+      <div>
+        <h2>Repository</h2>
+        <p class="section-sub" style="margin-bottom:0;">Full lab work, writeups, and reference material.</p>
+      </div>
+      <a class="repo-link-btn" href="https://github.com/YOUR-USERNAME/cybersecurity-portfolio">github.com/YOUR-USERNAME/cybersecurity-portfolio</a>
+    </div>
+
+    <div class="tree">
+      <div class="tree-dir">docs/ — supporting documentation and career-building materials</div>
+      <div class="tree-sub">
+        <a href="https://github.com/YOUR-USERNAME/cybersecurity-portfolio/tree/main/docs/certifications-and-skills">docs/certifications-and-skills/</a>
+        <span class="desc">Certifications earned or in progress, plus a running lab and skills log</span>
+      </div>
+      <div class="tree-sub">
+        <a href="https://github.com/YOUR-USERNAME/cybersecurity-portfolio/tree/main/docs/presentations">docs/presentations/</a>
+        <span class="desc">Slide decks and talks</span>
+      </div>
+      <div class="tree-sub">
+        <a href="https://github.com/YOUR-USERNAME/cybersecurity-portfolio/tree/main/docs/templates">docs/templates/</a>
+        <span class="desc">Reusable templates — audit reports, policy docs, checklists</span>
+      </div>
+
+      <div class="tree-dir tree-dir--grc">grc/ — governance, risk, and compliance</div>
+      <div class="tree-sub">
+        <a href="https://github.com/YOUR-USERNAME/cybersecurity-portfolio/tree/main/grc">grc/</a>
+        <span class="desc">Framework notes (NIST CSF, ISO 27001), risk assessment templates, policy examples</span>
+      </div>
+
+      <div class="tree-dir tree-dir--resources">resources/ — curated external reference material</div>
+      <div class="tree-sub">
+        <a href="https://github.com/YOUR-USERNAME/cybersecurity-portfolio/blob/main/resources/useful-links.md">resources/useful-links.md</a>
+        <span class="desc">Categorized links — SOC, malware analysis, TLS, GRC</span>
+      </div>
+
+      <div class="tree-dir tree-dir--security">security/ — hands-on technical work</div>
+      <div class="tree-sub">
+        <a href="https://github.com/YOUR-USERNAME/cybersecurity-portfolio/tree/main/security/malware-analysis">security/malware-analysis/</a>
+        <span class="desc">Writeups, sample breakdowns, static and dynamic analysis notes</span>
+      </div>
+      <div class="tree-sub">
+        <a href="https://github.com/YOUR-USERNAME/cybersecurity-portfolio/tree/main/security/research-and-writeups">security/research-and-writeups/</a>
+        <span class="desc">CTF writeups and technical deep-dives</span>
+      </div>
+      <div class="tree-sub">
+        <a href="https://github.com/YOUR-USERNAME/cybersecurity-portfolio/tree/main/security/soc-tools">security/soc-tools/</a>
+        <span class="desc">Scripts and tools for SOC / blue-team tasks</span>
+      </div>
+      <div class="tree-sub">
+        <a href="https://github.com/YOUR-USERNAME/cybersecurity-portfolio/tree/main/security/tls-audits">security/tls-audits/</a>
+        <span class="desc">TLS/PKI audit work, CA setup, misconfiguration investigations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-note">Carin Madden — Cybersecurity Portfolio</div>
+    <div class="foot-links">
+      <a href="https://github.com/YOUR-USERNAME">GitHub</a>
+      <a href="#about">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html></h1>
 
