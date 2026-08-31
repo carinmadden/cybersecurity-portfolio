@@ -1,12 +1,12 @@
 # Carin Madden - Cybersecurity-Portfolio
 
-##About Me
+## About Me
 - Currently working toward a: SOC Analyst/Incident Response/GRC position
 - Currently learning: I am Currently in a cybersecurity bootcamp that is expanding on all my working knowledge of cybersecurity in financial institutions
 - Certifications: in progress: Comptia Security+
 - Interests: SOC related tools, threat detection and alert triage, network traffic analysis, Malware analysis, threat intelligence, EDR tools, Risk assessment and risk management
 
-##Goals
+## Goals
 - Land a SOC analyst, Incident response, or GRC role 
 - Complete Security+ by the end of the year
  I'm building towards a career in cybersecurity. My goal with repo is to learn and document my real time progress.
@@ -37,7 +37,7 @@
 - Virtual Box, Microsoft Azure
 - Kali, Ubuntu
 
-##Repository Contents
+## Repository Contents
 
 ### `docs/`
 Supporting documentation and career-building materials.
@@ -66,8 +66,8 @@ Hands-on technical work across SOC, malware analysis, and network security.
 Source files for my portfolio website (if/when live).
 
 
-##Website
+## Website
 https://github.com/carinmadden/cybersecurity-portfolio.git
 
-##Contact
+## Contact
 LinkedIn: https://www.linkedin.com/in/carin-madden-9ab289196/
