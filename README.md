@@ -5,6 +5,7 @@
 - Currently learning: I am Currently in a cybersecurity bootcamp that is expanding on all my working knowledge of cybersecurity in financial institutions
 - Certifications: in progress: Comptia Security+
 - Interests: SOC related tools, threat detection and alert triage, network traffic analysis, Malware analysis, threat intelligence, EDR tools, Risk assessment and risk management
+
 **Things I enjoy in Cybersecurity**
 - Documentation
 - Learning new commands
