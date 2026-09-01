@@ -6,6 +6,10 @@
 - Certifications: in progress: Comptia Security+
 - Interests: SOC related tools, threat detection and alert triage, network traffic analysis, Malware analysis, threat intelligence, EDR tools, Risk assessment and risk management
 
+## Past Experience
+- I have a bachelor's degree in cybersecurity
+- I worked in a library as help desk 
+
 ## Goals
 - Land a SOC analyst, Incident response, or GRC role 
 - Complete Security+ by the end of the year
