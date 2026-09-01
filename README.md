@@ -6,6 +6,16 @@
 - Certifications: in progress: Comptia Security+
 - Interests: SOC related tools, threat detection and alert triage, network traffic analysis, Malware analysis, threat intelligence, EDR tools, Risk assessment and risk management
 
+**Things I enjoy in Cybersecurity**
+- Documentation
+- Learning new commands
+- Reading about recent vulnerabilities and hacks
+
+## My Experience
+- I have a bachelor's degree in Cybersecurity
+- I worked in a help desk position for a year
+- I have worked in hack the box for many hours to obtain a better understanding of network fundamel>
+
 ## Past Experience
 - I have a bachelor's degree in cybersecurity
 - I worked in a library as help desk 
