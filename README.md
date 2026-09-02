@@ -82,7 +82,7 @@ Source files for my portfolio website (if/when live).
 
 
 ## Website
-https://github.com/carinmadden/cybersecurity-portfolio.git
+https://carinmadden.github.io/cybersecurity-portfolio/
 
 ## Contact
 LinkedIn: https://www.linkedin.com/in/carin-madden-9ab289196/
