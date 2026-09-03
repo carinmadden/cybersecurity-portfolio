@@ -34,6 +34,7 @@ text-align:center;">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --plum-950:#1F1329;
@@ -52,8 +53,14 @@ text-align:center;">
     --sans:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --mono:'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
   }
+
   *{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; scroll-padding-top:64px; }
+
+  html{
+    scroll-behavior:smooth;
+    scroll-padding-top:64px;
+  }
+
   body{
     margin:0;
     background:var(--bone);
@@ -62,21 +69,32 @@ text-align:center;">
     line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
+
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
-    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+    *{
+      animation-duration:0.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:0.01ms !important;
+    }
   }
+
   a{ color:inherit; }
-  a:focus-visible, button:focus-visible{
+
+  a:focus-visible,
+  button:focus-visible{
     outline:2px solid var(--gold);
     outline-offset:3px;
   }
+
   .wrap{
     max-width:1040px;
     margin:0 auto;
     padding:0 30px;
   }
+
   /* ---------- NAV ---------- */
+
   .topnav{
     position:sticky;
     top:0;
@@ -85,18 +103,21 @@ text-align:center;">
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line-dark);
   }
+
   .topnav .wrap{
     display:flex;
     align-items:center;
     justify-content:space-between;
     height:64px;
   }
+
   .topnav .mark{
     font-family:var(--mono);
     font-size:0.86rem;
     color:var(--signal);
     letter-spacing:0.01em;
   }
+
   .topnav .mark .cursor{
     display:inline-block;
     width:7px;
@@ -106,7 +127,11 @@ text-align:center;">
     vertical-align:-2px;
     animation:blink 1.1s step-end infinite;
   }
-  @keyframes blink{ 50%{ opacity:0; } }
+
+  @keyframes blink{
+    50%{ opacity:0; }
+  }
+
   .nav-links{
     display:flex;
     gap:22px;
@@ -114,6 +139,7 @@ text-align:center;">
     margin:0;
     padding:0;
   }
+
   .nav-links a{
     font-family:var(--mono);
     font-size:0.86rem;
@@ -122,11 +148,13 @@ text-align:center;">
     position:relative;
     padding:4px 2px;
   }
+
   .nav-links a::before{
     content:"./";
     color:var(--signal);
     opacity:0.75;
   }
+
   .nav-links a::after{
     content:"";
     position:absolute;
@@ -137,20 +165,25 @@ text-align:center;">
     background:var(--gold-soft);
     transition:width 0.2s ease;
   }
+
   .nav-links a:hover::after,
   .nav-links a:focus-visible::after{
     width:100%;
   }
+
   .nav-links a:hover,
   .nav-links a:focus-visible{
     color:var(--bone);
     text-shadow:0 0 8px rgba(228,205,160,0.55);
   }
+
   @media (max-width:640px){
     .nav-links{ gap:16px; }
     .nav-links a{ font-size:0.78rem; }
   }
+
   /* ---------- HERO ---------- */
+
   .hero{
     background:radial-gradient(circle at 75% 45%, rgba(200,155,92,.12), transparent 28%),
                radial-gradient(circle at 20% 10%, rgba(95,191,154,.06), transparent 24%),
@@ -165,6 +198,7 @@ text-align:center;">
       linear-gradient(90deg, rgba(244,238,255,0.045) 1px, transparent 1px);
     background-size:auto,34px 34px,34px 34px;
   }
+
   .hero::after{
     content:"";
     position:absolute;
@@ -174,6 +208,7 @@ text-align:center;">
                repeating-linear-gradient(to bottom, transparent 0, transparent 2px, rgba(0,0,0,.045) 3px, transparent 4px);
     mix-blend-mode:screen;
   }
+
   .hero .wrap{
     position:relative;
     z-index:2;
@@ -183,7 +218,9 @@ text-align:center;">
     align-items:center;
     padding-bottom:44px;
   }
+
   .hero-copy{max-width:620px;}
+
   .hero-kicker{
     font-family:var(--mono);
     font-size:.82rem;
@@ -191,7 +228,12 @@ text-align:center;">
     letter-spacing:.02em;
     margin:0 0 18px;
   }
-  .hero-kicker::before{content:"root@carin:~$ "; color:var(--signal);}
+
+  .hero-kicker::before{
+    content:"root@carin:~$ ";
+    color:var(--signal);
+  }
+
   .hero h1{
     font-family:var(--serif);
     font-weight:500;
@@ -201,14 +243,23 @@ text-align:center;">
     margin:0 0 22px;
     max-width:11ch;
   }
+
   .hero h1 .accent{color:var(--gold-soft);}
+
   .hero p.lede{
     font-size:1.06rem;
     color:#D9CEE8;
     max-width:55ch;
     margin:0 0 26px;
   }
-  .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:24px;}
+
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:24px;
+  }
+
   .hero-btn{
     display:inline-flex;
     align-items:center;
@@ -221,60 +272,182 @@ text-align:center;">
     border:1px solid rgba(228,205,160,.75);
     transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
   }
-  .hero-btn.primary{background:var(--gold-soft); color:var(--plum-950); border-color:var(--gold-soft);}
-  .hero-btn.secondary{color:var(--gold-soft); background:rgba(255,255,255,.02);}
-  .hero-btn:hover,.hero-btn:focus-visible{transform:translateY(-2px); box-shadow:0 12px 26px rgba(0,0,0,.22);}
-  .badge-row{display:flex; flex-wrap:wrap; gap:9px; margin:0;}
-  .badge{
-    font-family:var(--mono); font-size:.76rem; color:#EEE7F4;
-    border:1px solid rgba(244,238,255,.14); background:rgba(255,255,255,.035);
-    padding:7px 11px; border-radius:999px; white-space:nowrap;
+
+  .hero-btn.primary{
+    background:var(--gold-soft);
+    color:var(--plum-950);
+    border-color:var(--gold-soft);
   }
-  .hero-visual{position:relative; min-height:360px; display:grid; place-items:center;}
+
+  .hero-btn.secondary{
+    color:var(--gold-soft);
+    background:rgba(255,255,255,.02);
+  }
+
+  .hero-btn:hover,
+  .hero-btn:focus-visible{
+    transform:translateY(-2px);
+    box-shadow:0 12px 26px rgba(0,0,0,.22);
+  }
+
+  .badge-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin:0;
+  }
+
+  .badge{
+    font-family:var(--mono);
+    font-size:.76rem;
+    color:#EEE7F4;
+    border:1px solid rgba(244,238,255,.14);
+    background:rgba(255,255,255,.035);
+    padding:7px 11px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+
+  .hero-visual{
+    position:relative;
+    min-height:360px;
+    display:grid;
+    place-items:center;
+  }
+
   .hero-visual::before{
-    content:""; position:absolute; width:390px; height:390px; border-radius:50%;
+    content:"";
+    position:absolute;
+    width:390px;
+    height:390px;
+    border-radius:50%;
     background:radial-gradient(circle, rgba(200,155,92,.28), rgba(200,155,92,.07) 34%, transparent 68%);
     filter:blur(8px);
   }
+
   .hero-visual::after{
-    content:""; position:absolute; width:210px; height:18px; bottom:38px; left:50%; transform:translateX(-50%);
+    content:"";
+    position:absolute;
+    width:210px;
+    height:18px;
+    bottom:38px;
+    left:50%;
+    transform:translateX(-50%);
     background:radial-gradient(ellipse, rgba(200,155,92,.65), rgba(200,155,92,.08) 42%, transparent 72%);
     filter:blur(7px);
     border-radius:50%;
   }
-  .lock-svg{width:min(500px,100%); height:auto; overflow:visible; position:relative; z-index:1; transform:translateY(-4px);}
-  .lock-glow{filter:drop-shadow(0 0 12px rgba(200,155,92,.55)) drop-shadow(0 0 28px rgba(200,155,92,.16));}
-  .lock-ring{fill:none; stroke:rgba(228,205,160,.18); stroke-width:1.2; stroke-dasharray:4 10; animation:spin-ring 22s linear infinite;}
-  .lock-ring.inner{stroke:rgba(95,191,154,.18); stroke-dasharray:2 8; animation-direction:reverse; animation-duration:16s;}
-  .circuit{fill:none; stroke:rgba(228,205,160,.65); stroke-width:1.6; stroke-linecap:round;}
-  .circuit-dot{fill:var(--gold-soft); filter:drop-shadow(0 0 5px rgba(200,155,92,.7));}
-  .shield{fill:rgba(45,27,60,.42); stroke:var(--gold-soft); stroke-width:2.3;}
-  .shield-inner{fill:none; stroke:var(--gold-soft); stroke-width:1.15; opacity:.78;}
-  .lock-body{fill:rgba(31,19,41,.72); stroke:var(--gold-soft); stroke-width:2.2;}
-  .lock-shackle{fill:none; stroke:var(--gold-soft); stroke-width:2.6; stroke-linecap:round;}
-  .keyhole{fill:var(--gold-soft); filter:drop-shadow(0 0 5px rgba(200,155,92,.5));}
-  @keyframes spin-ring{to{transform:rotate(360deg); transform-origin:center;}}
+
+  .lock-svg{
+    width:min(500px,100%);
+    height:auto;
+    overflow:visible;
+    position:relative;
+    z-index:1;
+    transform:translateY(-4px);
+  }
+
+  .lock-glow{
+    filter:drop-shadow(0 0 12px rgba(200,155,92,.55))
+           drop-shadow(0 0 28px rgba(200,155,92,.16));
+  }
+
+  .lock-ring{
+    fill:none;
+    stroke:rgba(228,205,160,.18);
+    stroke-width:1.2;
+    stroke-dasharray:4 10;
+    animation:spin-ring 22s linear infinite;
+  }
+
+  .lock-ring.inner{
+    stroke:rgba(95,191,154,.18);
+    stroke-dasharray:2 8;
+    animation-direction:reverse;
+    animation-duration:16s;
+  }
+
+  .circuit{
+    fill:none;
+    stroke:rgba(228,205,160,.65);
+    stroke-width:1.6;
+    stroke-linecap:round;
+  }
+
+  .circuit-dot{
+    fill:var(--gold-soft);
+    filter:drop-shadow(0 0 5px rgba(200,155,92,.7));
+  }
+
+  .shield{
+    fill:rgba(45,27,60,.42);
+    stroke:var(--gold-soft);
+    stroke-width:2.3;
+  }
+
+  .shield-inner{
+    fill:none;
+    stroke:var(--gold-soft);
+    stroke-width:1.15;
+    opacity:.78;
+  }
+
+  .lock-body{
+    fill:rgba(31,19,41,.72);
+    stroke:var(--gold-soft);
+    stroke-width:2.2;
+  }
+
+  .lock-shackle{
+    fill:none;
+    stroke:var(--gold-soft);
+    stroke-width:2.6;
+    stroke-linecap:round;
+  }
+
+  .keyhole{
+    fill:var(--gold-soft);
+    filter:drop-shadow(0 0 5px rgba(200,155,92,.5));
+  }
+
+  @keyframes spin-ring{
+    to{
+      transform:rotate(360deg);
+      transform-origin:center;
+    }
+  }
+
   .signal{display:none;}
+
   @media (max-width:860px){
     .hero .wrap{grid-template-columns:1fr;}
     .hero-visual{min-height:300px; margin-top:-18px;}
     .hero h1{max-width:14ch;}
   }
+
   /* ---------- SECTION SHELL ---------- */
-  section{ padding:92px 0; }
+
+  section{padding:92px 0;}
+
   h2{
     font-family:var(--serif);
     font-weight:500;
     font-size:clamp(1.9rem, 3vw, 2.5rem);
     margin:0 0 14px;
   }
+
   .section-intro{
     color:var(--ink-soft);
     max-width:62ch;
     margin:0 0 36px;
   }
+
   /* ---------- ABOUT ---------- */
-  #about h2{ font-size:clamp(1.55rem, 2.4vw, 2rem); }
+
+  #about h2{
+    font-size:clamp(1.55rem, 2.4vw, 2rem);
+  }
+
   .about-panel{
     display:grid;
     grid-template-columns:auto 1fr;
@@ -286,29 +459,41 @@ text-align:center;">
     padding:30px 32px;
     box-shadow:0 12px 36px rgba(31,19,41,0.06);
   }
+
   .about-panel .prompt{
     font-family:var(--mono);
     color:var(--rose);
     font-size:0.95rem;
     padding-top:2px;
   }
-  .about-panel p{
-  margin:0 0 14px;
-  color:var(--ink);
-  max-width:60ch;
-  font-size:0.94rem;
-  line-height:1.6;
- }
-  .about-panel p:last-child{ margin-bottom:0; }
-  @media (max-width:560px){
-    .about-panel{ grid-template-columns:1fr; }
+
+  /* UPDATED: About Me body text */
+  #about .about-panel > div > p{
+    margin:0 0 14px;
+    color:var(--ink);
+    max-width:60ch;
+    font-size:15px !important;
+    line-height:1.6;
   }
+
+  #about .about-panel > div > p:last-child{
+    margin-bottom:0;
+  }
+
+  @media (max-width:560px){
+    .about-panel{
+      grid-template-columns:1fr;
+    }
+  }
+
   /* ---------- SKILLS ---------- */
+
   .skills-grid{
     display:grid;
     grid-template-columns:repeat(2, minmax(0,1fr));
     gap:16px;
   }
+
   .skill-card{
     background:#FBF9FD;
     padding:30px;
@@ -316,6 +501,7 @@ text-align:center;">
     border-radius:18px;
     box-shadow:0 10px 30px rgba(31,19,41,0.05);
   }
+
   .skill-card h3{
     font-family:var(--serif);
     font-weight:500;
@@ -323,11 +509,13 @@ text-align:center;">
     margin:0 0 14px;
     color:var(--plum-800);
   }
+
   .skill-card ul{
     margin:0;
     padding:0;
     list-style:none;
   }
+
   .skill-card li{
     font-size:0.94rem;
     color:var(--ink);
@@ -335,7 +523,11 @@ text-align:center;">
     position:relative;
     border-top:1px solid var(--line);
   }
-  .skill-card li:first-child{ border-top:none; }
+
+  .skill-card li:first-child{
+    border-top:none;
+  }
+
   .skill-card li::before{
     content:"";
     position:absolute;
@@ -345,6 +537,7 @@ text-align:center;">
     height:1px;
     background:var(--rose);
   }
+
   .tools-row{
     margin-top:2px;
     background:var(--bone);
@@ -352,6 +545,7 @@ text-align:center;">
     border-top:none;
     padding:24px 28px;
   }
+
   .tools-row h3{
     font-family:var(--serif);
     font-weight:500;
@@ -359,11 +553,13 @@ text-align:center;">
     margin:0 0 14px;
     color:var(--plum-800);
   }
+
   .chip-row{
     display:flex;
     flex-wrap:wrap;
     gap:9px;
   }
+
   .chip{
     font-family:var(--mono);
     font-size:0.82rem;
@@ -373,20 +569,31 @@ text-align:center;">
     border-radius:999px;
     transition:box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   }
+
   .chip:hover{
     border-color:var(--rose);
     color:var(--rose);
     box-shadow:0 0 0 1px var(--rose), 0 0 10px rgba(166,66,91,0.35);
   }
+
   /* ---------- FEATURED PROJECT ---------- */
-  .featured{background:linear-gradient(145deg,var(--plum-800),#2C1C3E); color:var(--bone);}
-  .featured .section-intro{ color:#D9CEE8; }
+
+  .featured{
+    background:linear-gradient(145deg,var(--plum-800),#2C1C3E);
+    color:var(--bone);
+  }
+
+  .featured .section-intro{
+    color:#D9CEE8;
+  }
+
   .terminal{
     border:1px solid var(--line-dark);
     background:var(--plum-950);
     border-radius:18px;
     overflow:hidden;
   }
+
   .terminal-bar{
     display:flex;
     align-items:center;
@@ -395,31 +602,37 @@ text-align:center;">
     background:rgba(244,238,255,0.05);
     border-bottom:1px solid var(--line-dark);
   }
+
   .terminal-bar span{
     width:9px;
     height:9px;
     border-radius:50%;
     background:var(--line-dark);
   }
-  .terminal-bar span:nth-child(1){ background:var(--rose); }
-  .terminal-bar span:nth-child(2){ background:var(--gold); }
-  .terminal-bar span:nth-child(3){ background:var(--signal); }
+
+  .terminal-bar span:nth-child(1){background:var(--rose);}
+  .terminal-bar span:nth-child(2){background:var(--gold);}
+  .terminal-bar span:nth-child(3){background:var(--signal);}
+
   .terminal-bar .path{
     margin-left:8px;
     font-family:var(--mono);
     font-size:0.78rem;
     color:#B7A9C9;
   }
+
   .featured-panel{
     border-left:3px solid var(--gold);
     padding:30px 32px 34px;
   }
+
   .featured-panel .label{
     font-family:var(--mono);
     font-size:0.82rem;
     color:var(--gold-soft);
     margin:0 0 10px;
   }
+
   .featured-panel h3{
     font-family:var(--serif);
     font-weight:500;
@@ -427,17 +640,20 @@ text-align:center;">
     margin:0 0 18px;
     color:var(--bone);
   }
+
   .featured-panel p{
     color:#E5DCF0;
     max-width:60ch;
     margin:0 0 24px;
     font-size:1.02rem;
   }
+
   .featured-links{
     display:flex;
     flex-wrap:wrap;
     gap:24px;
   }
+
   .featured-link{
     font-family:var(--mono);
     font-size:0.92rem;
@@ -447,18 +663,22 @@ text-align:center;">
     padding-bottom:2px;
     transition:color 0.2s ease, border-color 0.2s ease, text-shadow 0.2s ease;
   }
+
   .featured-link:hover,
   .featured-link:focus-visible{
     color:var(--gold);
     border-color:var(--gold);
     text-shadow:0 0 10px rgba(200,155,92,0.6);
   }
+
   /* ---------- REPO DIRECTORY ---------- */
+
   .dir{
     display:grid;
     grid-template-columns:repeat(2, minmax(0,1fr));
     gap:16px;
   }
+
   .dir-item{
     background:linear-gradient(145deg,#FFFFFF,#F8F3FA);
     padding:22px 24px 24px;
@@ -471,24 +691,72 @@ text-align:center;">
     transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   }
 
-  .repo-head{display:flex; gap:14px; align-items:flex-start;}
-  .repo-icon{width:46px; height:46px; flex:0 0 46px; display:grid; place-items:center; border-radius:50%; background:#EEE4F5; color:var(--plum-800); border:1px solid rgba(59,38,80,.08); font-family:var(--mono); font-size:1rem; box-shadow:inset 0 0 0 5px rgba(255,255,255,.25);}
+  .repo-head{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+  }
+
+  .repo-icon{
+    width:46px;
+    height:46px;
+    flex:0 0 46px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:#EEE4F5;
+    color:var(--plum-800);
+    border:1px solid rgba(59,38,80,.08);
+    font-family:var(--mono);
+    font-size:1rem;
+    box-shadow:inset 0 0 0 5px rgba(255,255,255,.25);
+  }
+
   .repo-copy{min-width:0;}
-  .repo-tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:auto; padding-top:6px;}
-  .repo-tag{font-family:var(--mono); font-size:.71rem; color:var(--plum-800); background:#F0E8F6; border-radius:999px; padding:5px 9px;}
-  .repo-link{font-family:var(--mono); font-size:.78rem; color:var(--plum-800); text-decoration:none;}
-  .repo-link:hover,.repo-link:focus-visible{color:var(--rose);}
+
+  .repo-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-top:auto;
+    padding-top:6px;
+  }
+
+  .repo-tag{
+    font-family:var(--mono);
+    font-size:.71rem;
+    color:var(--plum-800);
+    background:#F0E8F6;
+    border-radius:999px;
+    padding:5px 9px;
+  }
+
+  .repo-link{
+    font-family:var(--mono);
+    font-size:.78rem;
+    color:var(--plum-800);
+    text-decoration:none;
+  }
+
+  .repo-link:hover,
+  .repo-link:focus-visible{
+    color:var(--rose);
+  }
+
   .dir-item:hover{
     background:#FFFFFF;
     transform:translateY(-3px);
-    box-shadow:0 16px 34px rgba(31,19,41,0.10), 0 0 0 1px rgba(200,155,92,0.55);
+    box-shadow:0 16px 34px rgba(31,19,41,0.10),
+               0 0 0 1px rgba(200,155,92,0.55);
   }
+
   .dir-item::before{
     content:"↳";
     font-family:var(--mono);
     color:var(--signal);
     font-size:0.85rem;
   }
+
   .dir-item .path{
     font-family:var(--mono);
     font-size:0.92rem;
@@ -496,20 +764,24 @@ text-align:center;">
     margin:0;
     display:inline-block;
   }
+
   .dir-item .path a{
     text-decoration:none;
     border-bottom:none;
   }
+
   .dir-item .path a:hover,
   .dir-item .path a:focus-visible{
     color:var(--rose);
     text-shadow:0 0 8px rgba(166,66,91,0.45);
   }
+
   .dir-item .desc{
     font-size:0.9rem;
     color:var(--ink-soft);
     flex-grow:1;
   }
+
   .dir-item .desc .sub{
     display:block;
     font-family:var(--mono);
@@ -518,9 +790,11 @@ text-align:center;">
     margin-top:10px;
     line-height:1.7;
   }
+
   .repo-cta{
     margin-top:30px;
   }
+
   .repo-cta a{
     display:inline-block;
     font-family:var(--mono);
@@ -533,25 +807,31 @@ text-align:center;">
     border:1px solid var(--plum-950);
     transition:box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
   }
+
   .repo-cta a:hover,
   .repo-cta a:focus-visible{
     background:var(--plum-800);
     border-color:var(--signal);
     box-shadow:0 0 14px rgba(95,191,154,0.45);
   }
+
   /* ---------- FOOTER ---------- */
+
   footer{
     background:var(--plum-950);
     color:#D9CEE8;
     padding:72px 0 54px;
   }
-  footer h2{ color:var(--bone); }
+
+  footer h2{color:var(--bone);}
+
   .contact-links{
     display:flex;
     flex-wrap:wrap;
     gap:22px;
     margin-top:20px;
   }
+
   .contact-links a{
     font-family:var(--mono);
     font-size:0.92rem;
@@ -561,30 +841,36 @@ text-align:center;">
     padding-bottom:2px;
     transition:color 0.2s ease, border-color 0.2s ease, text-shadow 0.2s ease;
   }
+
   .contact-links a:hover,
   .contact-links a:focus-visible{
     color:var(--gold);
     border-color:var(--gold);
     text-shadow:0 0 10px rgba(200,155,92,0.6);
   }
+
   .foot-note{
     margin-top:40px;
     font-family:var(--mono);
     font-size:0.78rem;
     color:#8B7DA0;
   }
+
   @media (max-width:760px){
-    .dir{ grid-template-columns:1fr; }
+    .dir{grid-template-columns:1fr;}
   }
+
   @media (max-width:640px){
-    .skills-grid{ grid-template-columns:1fr; }
-    .dir{ grid-template-columns:1fr; }
-    .hero{ padding-top:20px; }
-    section{ padding:56px 0; }
+    .skills-grid{grid-template-columns:1fr;}
+    .dir{grid-template-columns:1fr;}
+    .hero{padding-top:20px;}
+    section{padding:56px 0;}
   }
 </style>
 </head>
+
 <body>
+
 <nav class="topnav">
   <div class="wrap">
     <span class="mark">carin@security<span class="cursor"></span></span>
@@ -596,16 +882,32 @@ text-align:center;">
     </ul>
   </div>
 </nav>
+
 <header class="hero">
   <div class="wrap">
+
     <div class="hero-copy">
       <p class="hero-kicker">Carin Madden — Cybersecurity</p>
-      <h1>Building the skills of a <span class="accent">working cybersecurity professional.</span></h1>
-      <p class="lede">I'm a cybersecurity bootcamp student expanding on existing working knowledge of cybersecurity in financial institutions through structured, hands-on labs.</p>
+
+      <h1>
+        Building the skills of a
+        <span class="accent">working cybersecurity professional.</span>
+      </h1>
+
+      <p class="lede">
+        I'm a cybersecurity bootcamp student expanding on existing working knowledge of cybersecurity in financial institutions through structured, hands-on labs.
+      </p>
+
       <div class="hero-actions">
-        <a class="hero-btn primary" href="https://github.com/carinmadden/cybersecurity-portfolio">⌁&nbsp; View GitHub</a>
-        <a class="hero-btn secondary" href="#repo">↓&nbsp; Explore projects</a>
+        <a class="hero-btn primary" href="https://github.com/carinmadden/cybersecurity-portfolio">
+          ⌁&nbsp; View GitHub
+        </a>
+
+        <a class="hero-btn secondary" href="#repo">
+          ↓&nbsp; Explore projects
+        </a>
       </div>
+
       <div class="badge-row">
         <span class="badge">B.S. Cybersecurity</span>
         <span class="badge">Security+ — in progress</span>
@@ -613,32 +915,52 @@ text-align:center;">
         <span class="badge">Hack The Box</span>
       </div>
     </div>
+
     <div class="hero-visual" aria-hidden="true">
       <svg class="lock-svg" viewBox="0 0 520 520">
-        <g class="lock-ring"><circle cx="260" cy="260" r="210"/></g>
-        <g class="lock-ring inner"><circle cx="260" cy="260" r="180"/></g>
+        <g class="lock-ring">
+          <circle cx="260" cy="260" r="210"/>
+        </g>
+
+        <g class="lock-ring inner">
+          <circle cx="260" cy="260" r="180"/>
+        </g>
+
         <g class="circuit">
-          <path d="M44 190H128L168 150H208"/><path d="M312 150H352L392 190H476"/>
-          <path d="M38 330H118L168 370H208"/><path d="M312 370H352L402 330H482"/>
-          <path d="M78 255H138L172 221H196"/><path d="M324 221H348L382 255H442"/>
-          <path d="M76 281H140L175 316H196"/><path d="M324 316H345L380 281H444"/>
+          <path d="M44 190H128L168 150H208"/>
+          <path d="M312 150H352L392 190H476"/>
+          <path d="M38 330H118L168 370H208"/>
+          <path d="M312 370H352L402 330H482"/>
+          <path d="M78 255H138L172 221H196"/>
+          <path d="M324 221H348L382 255H442"/>
+          <path d="M76 281H140L175 316H196"/>
+          <path d="M324 316H345L380 281H444"/>
         </g>
+
         <g>
-          <circle class="circuit-dot" cx="44" cy="190" r="4"/><circle class="circuit-dot" cx="476" cy="190" r="4"/>
-          <circle class="circuit-dot" cx="38" cy="330" r="4"/><circle class="circuit-dot" cx="482" cy="330" r="4"/>
-          <circle class="circuit-dot" cx="78" cy="255" r="4"/><circle class="circuit-dot" cx="442" cy="255" r="4"/>
-          <circle class="circuit-dot" cx="76" cy="281" r="4"/><circle class="circuit-dot" cx="444" cy="281" r="4"/>
+          <circle class="circuit-dot" cx="44" cy="190" r="4"/>
+          <circle class="circuit-dot" cx="476" cy="190" r="4"/>
+          <circle class="circuit-dot" cx="38" cy="330" r="4"/>
+          <circle class="circuit-dot" cx="482" cy="330" r="4"/>
+          <circle class="circuit-dot" cx="78" cy="255" r="4"/>
+          <circle class="circuit-dot" cx="442" cy="255" r="4"/>
+          <circle class="circuit-dot" cx="76" cy="281" r="4"/>
+          <circle class="circuit-dot" cx="444" cy="281" r="4"/>
         </g>
+
         <g class="lock-glow">
           <path class="shield" d="M260 72L380 120V246C380 335 323 390 260 416C197 390 140 335 140 246V120L260 72Z"/>
           <path class="shield-inner" d="M260 94L358 134V244C358 315 315 362 260 387C205 362 162 315 162 244V134L260 94Z"/>
           <path class="lock-shackle" d="M206 244V208C206 164 230 142 260 142C290 142 314 164 314 208V244"/>
           <rect class="lock-body" x="194" y="232" width="132" height="108" rx="18"/>
-          <circle class="keyhole" cx="260" cy="272" r="9"/><rect class="keyhole" x="256" y="278" width="8" height="26" rx="4"/>
+          <circle class="keyhole" cx="260" cy="272" r="9"/>
+          <rect class="keyhole" x="256" y="278" width="8" height="26" rx="4"/>
         </g>
       </svg>
     </div>
+
   </div>
+
   <svg class="signal" viewBox="0 0 900 160" preserveAspectRatio="none" role="presentation" aria-hidden="true">
     <g class="signal-group">
       <g class="edges">
@@ -660,6 +982,7 @@ text-align:center;">
         <line x1="760" y1="70" x2="860" y2="120"/>
         <line x1="820" y1="40" x2="860" y2="120"/>
       </g>
+
       <g class="nodes">
         <circle cx="60" cy="90" r="4"/>
         <circle cx="140" cy="50" r="4"/>
@@ -680,127 +1003,15 @@ text-align:center;">
     </g>
   </svg>
 </header>
+
 <section id="about">
   <div class="wrap">
+
     <h2>About me</h2>
-    <p class="section-intro">A little more on where I'm coming from and what I'm building toward.</p>
-    <div class="about-panel">
-      <span class="prompt">&gt;</span>
-      <div>
-        <p>I'm a cybersecurity bootcamp student building on working knowledge of cybersecurity in financial institutions, currently pursuing my CompTIA Security+ certification.</p>
-        <p>Everything in this portfolio comes from structured, hands-on labs — network defense, systems administration, virtualization, and applied cryptography — plus independent practice on Hack The Box.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="skills">
-  <div class="wrap">
-    <h2>Skills at a glance</h2>
-    <p class="section-intro">Built through structured labs across network defense, systems administration, virtualization, and cryptography.</p>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Network security</h3>
-        <ul>
-          <li>Identifying and exploiting common network vulnerabilities</li>
-          <li>Defending network protocols and authentication mechanisms</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Linux &amp; Windows administration</h3>
-        <ul>
-          <li>Hardening Linux systems — accounts, permissions, config</li>
-          <li>Implementing security policies on Linux and Windows</li>
-          <li>Hardening Windows Servers</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Virtualization &amp; infrastructure security</h3>
-        <ul>
-          <li>Identifying virtualization-specific threats</li>
-          <li>Securing enterprise virtualization environments</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Cryptography &amp; PKI</h3>
-        <ul>
-          <li>Applied cryptography fundamentals</li>
-          <li>Building an internal Certificate Authority and implementing TLS</li>
-          <li>Investigating and diagnosing TLS misconfigurations</li>
-        </ul>
-      </div>
-    </div>
-    <div class="tools-row">
-      <h3>Tools &amp; environments across labs</h3>
-      <div class="chip-row">
-        <span class="chip">Linux</span>
-        <span class="chip">Windows Server</span>
-        <span class="chip">VirtualBox</span>
-        <span class="chip">Microsoft Azure</span>
-        <span class="chip">Kali</span>
-        <span class="chip">Ubuntu</span>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="projects" class="featured">
-  <div class="wrap">
-    <h2>Featured build</h2>
-    <p class="section-intro">One project from the repository I keep coming back to.</p>
-    <div class="terminal">
-      <div class="terminal-bar">
-        <span></span><span></span><span></span>
-        <span class="path">~/cybersecurity-portfolio/security/tls-audits</span>
-      </div>
-      <div class="featured-panel">
-        <p class="label">security/tls-audits</p>
-        <h3>Standing up an internal Certificate Authority</h3>
-        <p>I built an internal CA from scratch and used it to issue and implement TLS across a lab environment, then went looking for where the configuration could still fail — writing up what I found along the way.</p>
-        <div class="featured-links">
-          <a class="featured-link" href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/security/tls-audits">View the write-up folder</a>
-          <a class="featured-link" href="https://github.com/carinmadden/cybersecurity-portfolio/blob/main/security/tls-audits/audit-1.md">Read audit-1.md</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="repo">
-  <div class="wrap">
-    <h2>Explore the repository</h2>
-    <p class="section-intro">My progress lives here in real time — labs, write-ups, and reference material, organized as I build it.</p>
-    <div class="dir" aria-label="Repository sections">
-      <div class="dir-item">
-        <div class="repo-head"><div class="repo-icon">▤</div><div class="repo-copy"><p class="path"><a href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/docs">docs/</a></p><p class="desc">Certifications, skills log, presentations, and reusable templates.</p></div></div>
-        <div class="repo-tags"><span class="repo-tag">certifications</span><span class="repo-tag">templates</span></div>
-      </div>
-      <div class="dir-item">
-        <div class="repo-head"><div class="repo-icon">◇</div><div class="repo-copy"><p class="path"><a href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/grc">grc/</a></p><p class="desc">Governance, risk, and compliance notes, templates, and policy examples.</p></div></div>
-        <div class="repo-tags"><span class="repo-tag">NIST CSF</span><span class="repo-tag">ISO 27001</span></div>
-      </div>
-      <div class="dir-item">
-        <div class="repo-head"><div class="repo-icon">⌁</div><div class="repo-copy"><p class="path"><a href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/security">security/</a></p><p class="desc">Hands-on technical work across analysis, SOC tooling, and TLS.</p></div></div>
-        <div class="repo-tags"><span class="repo-tag">SOC tools</span><span class="repo-tag">TLS</span></div>
-      </div>
-      <div class="dir-item">
-        <div class="repo-head"><div class="repo-icon">⊕</div><div class="repo-copy"><p class="path"><a href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/resources">resources/</a></p><p class="desc">Curated tools, cheatsheets, blogs, and reference material.</p></div></div>
-        <div class="repo-tags"><span class="repo-tag">cheatsheets</span><span class="repo-tag">references</span></div>
-      </div>
-      <div class="dir-item">
-        <div class="repo-head"><div class="repo-icon">&lt;/&gt;</div><div class="repo-copy"><p class="path"><a href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/site">site/</a></p><p class="desc">Source files and design for this portfolio.</p></div></div>
-        <div class="repo-tags"><span class="repo-tag">HTML</span><span class="repo-tag">CSS</span></div>
-      </div>
-    </div>
-    <p class="repo-cta"><a href="https://github.com/carinmadden/cybersecurity-portfolio">View the full repository on GitHub</a></p>
-  </div>
-</section>
-<footer>
-  <div class="wrap">
-    <h2>Get in touch</h2>
-    <div class="contact-links">
-      <a href="https://www.linkedin.com/in/carin-madden-9ab289196/">LinkedIn</a>
-      <a href="https://github.com/carinmadden/cybersecurity-portfolio">GitHub</a>
-    </div>
-    <p class="foot-note">Built and deployed with GitHub Pages.</p>
-  </div>
-</footer>
-</body>
+
+    <p class="section-intro">
+      A little more on where I'm coming from and what I'm building toward.
+    </p>
+
+
 </html><h1>
