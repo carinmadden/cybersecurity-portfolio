@@ -569,6 +569,54 @@
     .hero{ padding-top:20px; }
     section{ padding:56px 0; }
   }
+
+  /* ---------- PORTFOLIO QR ---------- */
+  .portfolio-qr{
+    margin-top:28px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    max-width:430px;
+    padding:16px 18px;
+    border:1px solid var(--line-dark);
+    border-radius:14px;
+    background:rgba(255,255,255,0.055);
+  }
+  .portfolio-qr img{
+    width:112px;
+    height:112px;
+    display:block;
+    flex:0 0 auto;
+    padding:7px;
+    background:#fff;
+    border-radius:10px;
+  }
+  .portfolio-qr-copy{
+    margin:0;
+    font-family:var(--mono);
+    font-size:0.82rem;
+    line-height:1.55;
+    color:#D9CEE8;
+  }
+  .portfolio-qr-copy strong{
+    display:block;
+    margin-bottom:4px;
+    color:var(--gold-soft);
+    font-family:var(--sans);
+    font-size:0.95rem;
+    font-weight:600;
+  }
+  @media (max-width:520px){
+    .portfolio-qr{
+      align-items:flex-start;
+      max-width:100%;
+    }
+    .portfolio-qr img{
+      width:92px;
+      height:92px;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -786,6 +834,11 @@
       <a href="https://www.linkedin.com/in/carin-madden-9ab289196/">LinkedIn</a>
       <a href="https://github.com/carinmadden/cybersecurity-portfolio">GitHub</a>
     </div>
+      <div class="portfolio-qr">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUgAAAFIAQAAAAAab1qeAAACHklEQVR4nO2a4WrDMAyEvxt5/1e+/ZDkNAxGMgixM7VQ0vjA8iFbJ8kyJz9fZ4GNbGQjG/kvkBuA4tnICOcLy/vI03augtyA4Cu5swQYBaH7yCormoFPBAY5uQzHlMfI43augtwO/2Kzf276e2d/O9IgWQYJ/4a8Y/Y3INM/izsLhCwXoYPVVVY0A59ja8tynKJY7AH+ptnfh9Tnrq7InkH9uOFXWdEEfJZHoiGUlA/x/nk7l0IGYaE8sS3CPZ1jrT+vIQVO9R5UgkOF2nKeCRPYuQByg0qPQnLKu/jMH6vzzUtIgWKXA9gg/JG8t3+eRmZOaWFCye9xCDKR73rIaWTGd5JUgtkaqXfP27kWUghbEduNxhe59dIf9JKsDO22Qn+GAC1JOoWdyyDNKHUGq+GZ5a3T2LkUMsRm5EY2riDV+vOv+fsI9EBEpny6a/a3IoWEKiMCGzv8FVKZzmDn/MghlapRNNoe5LFasnSVFc2AtEBRDpFUwSmlqPv8vK7ntRc+q4wcer7z90vI6m+OanzWRhSatNrGj9u5CvJYn7c8qvO53WV1/n7RPyv8WMNRK1/ae3KrrGgCPssl9yJThiOqJvq4nasgD/dDsssRMhRVA+S+2d+HPN4PKT8NUa+qlPT5eRr5875Nis64KDKU/tN2Loa0g8TRkFMymXFpFjunR1aHA3KD15WwbHOq/i2zogn4fGz2RjaykY1cF/kNzc38kuG5yugAAAAASUVORK5CYII=" alt="QR code linking to Carin Madden's cybersecurity portfolio">
+        <p class="portfolio-qr-copy"><strong>Scan my portfolio</strong>Open this site on another device or share the portfolio directly.</p>
+      </div>
+
     <p class="foot-note">Built and deployed with GitHub Pages.</p>
   </div>
 </footer>
