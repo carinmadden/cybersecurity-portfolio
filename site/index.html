@@ -792,6 +792,76 @@
     .resource-grid{grid-template-columns:1fr;}
   }
 
+
+  /* ---------- RECENT REPOSITORY UPDATES ---------- */
+  #recent-updates{
+    background:linear-gradient(180deg,#f7f2fa 0%,#ffffff 100%);
+  }
+  .updates-list{
+    display:grid;
+    gap:14px;
+    margin-top:28px;
+  }
+  .update-card{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:18px;
+    align-items:center;
+    padding:20px 22px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:0 8px 24px rgba(31,19,41,.05);
+  }
+  .update-marker{
+    width:38px;
+    height:38px;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    background:var(--plum-950);
+    color:var(--gold-soft);
+    font-family:var(--mono);
+    font-size:.78rem;
+  }
+  .update-copy h3{
+    margin:0 0 5px;
+    font-family:var(--sans);
+    font-size:.96rem;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .update-copy p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:.86rem;
+    font-weight:400;
+    line-height:1.55;
+  }
+  .update-link{
+    font-family:var(--mono);
+    font-size:.8rem;
+    color:var(--plum-700);
+    text-decoration:none;
+    white-space:nowrap;
+    border-bottom:1px solid var(--gold);
+  }
+  .updates-footer{
+    margin-top:22px;
+    font-size:.86rem;
+    color:var(--ink-soft);
+  }
+  .updates-footer a{
+    color:var(--plum-700);
+    font-family:var(--mono);
+    text-decoration:none;
+    border-bottom:1px solid var(--gold);
+  }
+  @media(max-width:650px){
+    .update-card{grid-template-columns:auto 1fr;}
+    .update-link{grid-column:2;}
+  }
+
 </style>
 </head>
 <body>
@@ -803,6 +873,7 @@
       <li><a href="#career">experience</a></li>
         <li><a href="#education">education</a></li>
         <li><a href="#skills">skills</a></li>
+        <li><a href="#recent-updates">recent</a></li>
         <li><a href="#resources-hub">resources</a></li>
         <li><a href="#projects">projects</a></li>
       <li><a href="#repo">repositories</a></li>
@@ -1000,6 +1071,45 @@
         <span class="chip">Ubuntu</span>
       </div>
     </div>
+  </div>
+</section>
+
+
+<section id="recent-updates">
+  <div class="wrap">
+    <h2>Recently added</h2>
+    <p class="section-intro">A quick look at the newest work and updates in my cybersecurity repository.</p>
+
+    <div class="updates-list">
+      <article class="update-card">
+        <div class="update-marker">TLS</div>
+        <div class="update-copy">
+          <h3>TLS &amp; PKI audit work</h3>
+          <p>Certificate Authority setup, TLS configuration, misconfiguration investigations, and certificate hardening notes.</p>
+        </div>
+        <a class="update-link" href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/security/tls-audits">View →</a>
+      </article>
+
+      <article class="update-card">
+        <div class="update-marker">LAB</div>
+        <div class="update-copy">
+          <h3>Security labs &amp; write-ups</h3>
+          <p>Hands-on technical work covering network security, SOC concepts, research, and practical cybersecurity exercises.</p>
+        </div>
+        <a class="update-link" href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/security">View →</a>
+      </article>
+
+      <article class="update-card">
+        <div class="update-marker">DOC</div>
+        <div class="update-copy">
+          <h3>Templates &amp; documentation</h3>
+          <p>Reusable documentation and presentation resources added as I continue building and organizing the portfolio.</p>
+        </div>
+        <a class="update-link" href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/docs">View →</a>
+      </article>
+    </div>
+
+    <p class="updates-footer">For the actual latest commits and timestamps, <a href="https://github.com/carinmadden/cybersecurity-portfolio/commits/main">view the repository commit history →</a></p>
   </div>
 </section>
 
