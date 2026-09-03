@@ -25,7 +25,6 @@ text-align:center;">
 </script>
 
 <h1><!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -275,6 +274,7 @@ text-align:center;">
     margin:0 0 36px;
   }
   /* ---------- ABOUT ---------- */
+  #about h2{ font-size:clamp(1.55rem, 2.4vw, 2rem); }
   .about-panel{
     display:grid;
     grid-template-columns:auto 1fr;
@@ -510,6 +510,9 @@ text-align:center;">
   }
   .dir-item .desc .sub{
     display:block;
+    font-family:var(--mono);
+    font-size:0.78rem;
+    color:var(--ink-soft);
     margin-top:10px;
     line-height:1.7;
   }
@@ -524,8 +527,6 @@ text-align:center;">
     color:var(--bone);
     text-decoration:none;
     padding:13px 22px;
-
-
     border-radius:999px;
     border:1px solid var(--plum-950);
     transition:box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
@@ -549,7 +550,6 @@ text-align:center;">
     gap:22px;
     margin-top:20px;
   }
-
   .contact-links a{
     font-family:var(--mono);
     font-size:0.92rem;
@@ -574,7 +574,6 @@ text-align:center;">
   @media (max-width:760px){
     .dir{ grid-template-columns:1fr; }
   }
-
   @media (max-width:640px){
     .skills-grid{ grid-template-columns:1fr; }
     .dir{ grid-template-columns:1fr; }
