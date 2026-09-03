@@ -85,6 +85,8 @@ LinkedIn: https://www.linkedin.com/in/carin-madden-9ab289196/
 
 ## 📱 QR Code
 
-Scan the QR code below to view my cybersecurity portfolio.
+Scan to view my cybersecurity portfolio:
 
-[![QR Code for my cybersecurity portfolio](site/assets/qr-code.png)](https://carinmadden.github.io/cybersecurity-portfolio/)
+<a href="https://carinmadden.github.io/cybersecurity-portfolio/">
+  <img src="site/assets/qr-code.png" alt="Cybersecurity Portfolio QR Code" width="200">
+</a>
