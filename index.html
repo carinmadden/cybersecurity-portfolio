@@ -1,5 +1,6 @@
 
-<h1><!DOCTYPE html>
+<h1>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -617,6 +618,180 @@
     }
   }
 
+
+  /* ---------- CAREER & EXPERIENCE ---------- */
+  .career-grid{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:18px;
+    margin-top:28px;
+  }
+  .career-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:24px;
+    box-shadow:0 10px 28px rgba(31,19,41,0.06);
+  }
+  .career-card h3{
+    margin:0 0 12px;
+    color:var(--plum-800);
+    font-family:var(--serif);
+    font-size:1.12rem;
+    font-weight:500;
+  }
+  .career-card p,
+  .career-card li{
+    font-size:0.92rem;
+    font-weight:400;
+    line-height:1.65;
+    color:var(--ink-soft);
+  }
+  .career-card ul{
+    margin:0;
+    padding-left:19px;
+  }
+  .career-card li + li{ margin-top:7px; }
+  .career-card.wide{ grid-column:1 / -1; }
+  .career-highlight{
+    color:var(--plum-800);
+    font-weight:600;
+  }
+  @media (max-width:700px){
+    .career-grid{ grid-template-columns:1fr; }
+    .career-card.wide{ grid-column:auto; }
+  }
+
+
+  /* ---------- EDUCATION ---------- */
+  #education{
+    background:linear-gradient(180deg, #ffffff 0%, #f7f2fa 100%);
+  }
+  .education-card{
+    margin-top:30px;
+    display:flex;
+    align-items:center;
+    gap:30px;
+    padding:30px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    box-shadow:0 12px 34px rgba(31,19,41,0.07);
+  }
+  .rmu-logo-wrap{
+    width:190px;
+    min-width:190px;
+    min-height:105px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px;
+    border-radius:14px;
+    background:#f8f8f8;
+    border:1px solid #e1e1e1;
+  }
+  .rmu-logo{
+    display:block;
+    max-width:155px;
+    max-height:82px;
+    object-fit:contain;
+  }
+  .rmu-fallback{
+    display:none;
+    font-family:var(--sans);
+    font-size:2.15rem;
+    font-weight:700;
+    letter-spacing:-0.06em;
+    color:#14234b;
+  }
+  .education-copy h3{
+    margin:0 0 8px;
+    font-family:var(--serif);
+    color:var(--plum-800);
+    font-size:1.35rem;
+    font-weight:500;
+  }
+  .education-copy p{
+    margin:4px 0;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    font-weight:400;
+  }
+  .education-degree{
+    color:var(--ink) !important;
+    font-weight:600 !important;
+  }
+  .education-link{
+    display:inline-block;
+    margin-top:12px;
+    font-family:var(--mono);
+    font-size:0.82rem;
+    color:var(--plum-700);
+    text-decoration:none;
+    border-bottom:1px solid var(--gold);
+  }
+  @media(max-width:620px){
+    .education-card{flex-direction:column;align-items:flex-start;}
+    .rmu-logo-wrap{width:100%;min-width:0;}
+  }
+
+
+  /* ---------- TEMPLATES & LABS ---------- */
+  #resources-hub{
+    background:#fff;
+  }
+  .resource-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+    margin-top:28px;
+  }
+  .resource-card{
+    display:flex;
+    flex-direction:column;
+    min-height:230px;
+    padding:26px;
+    background:var(--bone);
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:0 10px 28px rgba(31,19,41,.06);
+  }
+  .resource-icon{
+    font-size:1.55rem;
+    margin-bottom:14px;
+  }
+  .resource-card h3{
+    margin:0 0 10px;
+    font-family:var(--serif);
+    font-size:1.2rem;
+    font-weight:500;
+    color:var(--plum-800);
+  }
+  .resource-card p{
+    margin:0 0 20px;
+    color:var(--ink-soft);
+    font-size:.92rem;
+    line-height:1.65;
+    font-weight:400;
+  }
+  .resource-card a{
+    margin-top:auto;
+    align-self:flex-start;
+    font-family:var(--mono);
+    font-size:.84rem;
+    color:var(--plum-700);
+    text-decoration:none;
+    border-bottom:1px solid var(--gold);
+    padding-bottom:2px;
+  }
+  .resource-card a:hover,
+  .resource-card a:focus-visible{
+    color:var(--rose);
+  }
+  @media(max-width:640px){
+    .resource-grid{grid-template-columns:1fr;}
+  }
+
 </style>
 </head>
 <body>
@@ -625,8 +800,11 @@
     <span class="mark">carin@security<span class="cursor"></span></span>
     <ul class="nav-links">
       <li><a href="#about">about me</a></li>
-      <li><a href="#skills">skills</a></li>
-      <li><a href="#projects">projects</a></li>
+      <li><a href="#career">experience</a></li>
+        <li><a href="#education">education</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#resources-hub">resources</a></li>
+        <li><a href="#projects">projects</a></li>
       <li><a href="#repo">repositories</a></li>
     </ul>
   </div>
@@ -728,6 +906,53 @@
     </div>
   </div>
 </section>
+
+<section id="career">
+  <div class="wrap">
+    <h2>Career focus &amp; experience</h2>
+    <p class="section-intro">Where I am headed, what I am learning, and the experience I am building on.</p>
+
+    <div class="career-grid">
+      <div class="career-card">
+        <h3>Currently working toward</h3>
+        <p><span class="career-highlight">SOC Analyst, Incident Response, or GRC</span> positions where I can continue developing hands-on defensive security skills.</p>
+      </div>
+
+      <div class="career-card">
+        <h3>Cybersecurity interests</h3>
+        <ul>
+          <li>SOC tools, threat detection, and alert triage</li>
+          <li>Network traffic analysis</li>
+          <li>Malware analysis and threat intelligence</li>
+          <li>EDR tools</li>
+          <li>Risk assessment and risk management</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <p class="section-intro">The academic foundation behind my cybersecurity work.</p>
+    <div class="education-card">
+      <div class="rmu-logo-wrap">
+        <img class="rmu-logo" src="assets/rmu_logo_1.png" alt="Robert Morris University logo"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="rmu-fallback" aria-label="Robert Morris University">RMU</span>
+      </div>
+      <div class="education-copy">
+        <h3>Robert Morris University</h3>
+        <p class="education-degree">Bachelor of Science in Cybersecurity</p>
+        <p>Graduate</p>
+        <a class="education-link" href="https://www.rmu.edu/" target="_blank" rel="noopener">Visit Robert Morris University</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="skills">
   <div class="wrap">
     <h2>Skills at a glance</h2>
@@ -777,6 +1002,30 @@
     </div>
   </div>
 </section>
+
+<section id="resources-hub">
+  <div class="wrap">
+    <h2>Templates &amp; lab resources</h2>
+    <p class="section-intro">Looking for something reusable or a closer look at my hands-on work? Start here.</p>
+
+    <div class="resource-grid">
+      <article class="resource-card">
+        <div class="resource-icon" aria-hidden="true">▣</div>
+        <h3>Presentation templates</h3>
+        <p>Reusable presentation materials and slide resources for documenting cybersecurity topics, findings, and project work.</p>
+        <a href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/docs/templates">Browse presentation templates →</a>
+      </article>
+
+      <article class="resource-card">
+        <div class="resource-icon" aria-hidden="true">&gt;_</div>
+        <h3>Labs &amp; hands-on work</h3>
+        <p>Explore my technical labs, write-ups, TLS/PKI work, SOC tools, malware analysis, and other hands-on security projects.</p>
+        <a href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/security">Explore security labs →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="projects" class="featured">
   <div class="wrap">
     <h2>Featured build</h2>
@@ -843,4 +1092,5 @@
   </div>
 </footer>
 </body>
-</html><h1>
+</html>
+<h1>
