@@ -80,6 +80,8 @@ Hands-on technical work across SOC, malware analysis, and network security.
 ### `site/`
 Source files for my portfolio website (if/when live).
 
+### 'tls-audits/'
+TLS/Certificate audit across multiple sites.
 
 ## Website
 https://carinmadden.github.io/cybersecurity-portfolio/
