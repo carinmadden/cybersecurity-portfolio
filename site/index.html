@@ -1277,6 +1277,18 @@
     body::before{ animation:none !important; }
   }
 
+
+  .resource-links{
+    margin-top:auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 18px;
+    align-items:center;
+  }
+  .resource-links a{
+    margin-top:0;
+  }
+
 </style>
 </head>
 <body>
@@ -1551,7 +1563,10 @@
         <div class="resource-icon" aria-hidden="true">&gt;_</div>
         <h3>Labs &amp; hands-on work</h3>
         <p>Explore my technical labs, write-ups, TLS/PKI work, SOC tools, malware analysis, and other hands-on security projects.</p>
-        <a href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/docs/templates">Browse lab templates →</a>
+        <div class="resource-links">
+          <a href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/docs/templates">Browse lab templates →</a>
+          <a href="https://github.com/carinmadden/cybersecurity-portfolio/blob/main/docs/certifications-and-skills/labs-tracker.md">View labs tracker →</a>
+        </div>
       </article>
     </div>
   </div>
