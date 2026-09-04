@@ -16,11 +16,6 @@
 - I worked in a help desk position for a year
 - I have worked in hack the box for many hours to obtain a better understanding of network fundamentals
 
-## 🕰️ Past Experience
-- I have a bachelor's degree in cybersecurity
-- I worked in a library as help desk
-- I have worked in hack the box for many hours to obtain a better understanding of network fundamentals, as well as windows, and to obtain some hands on hacking experience.
-
 ## 🎯 Goals
 - Land a SOC analyst, Incident response, or GRC role
 - Complete Security+ by the end of the year
