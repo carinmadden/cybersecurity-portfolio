@@ -4,7 +4,7 @@ These are useful links and resources that I have used for labs, research, and ju
 
 ## Labs
  | Website | Link | Notes |
- | Hackthebox | https://www.hackthebox.com | A good resource for learning fundamentals, doing hands-on labs, and pentesting. Geared t>
+ | Hackthebox | https://www.hackthebox.com | A good resource for learning fundamentals, doing hands-on labs, and pentesting. |
  | TryHackMe | https://tryhackme.com/ | A good beginner resource for learning fundamentals, doing hands-on labs, and pentesting. |
 
 ## Research
