@@ -866,6 +866,417 @@
     white-space:nowrap;
   }
 
+
+  /* ---------- CYBER ENHANCEMENTS ---------- */
+  .topnav .mark{
+    display:inline-flex;
+    align-items:center;
+    gap:3px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+
+  .topnav .mark .cursor{
+    flex:0 0 auto;
+    box-shadow:0 0 8px rgba(95,191,154,.85);
+  }
+
+  .topnav .wrap{
+    gap:18px;
+  }
+
+  .nav-links{
+    min-width:0;
+  }
+
+  .nav-links a{
+    white-space:nowrap;
+  }
+
+  /* Subtle animated cyber scanline */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:999;
+    background:linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(95,191,154,.035) 48%,
+      rgba(95,191,154,.08) 50%,
+      transparent 52%,
+      transparent 100%
+    );
+    background-size:100% 180px;
+    animation:cyber-scan 8s linear infinite;
+    mix-blend-mode:screen;
+    opacity:.45;
+  }
+
+  @keyframes cyber-scan{
+    from{ background-position:0 -180px; }
+    to{ background-position:0 180px; }
+  }
+
+  /* Status strip beneath hero content */
+  .cyber-status{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 16px;
+    margin:0 0 32px;
+    font-family:var(--mono);
+    font-size:.78rem;
+    color:#CFC3DD;
+  }
+
+  .cyber-status span{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+  }
+
+  .cyber-status span::before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:var(--signal);
+    box-shadow:0 0 8px rgba(95,191,154,.85);
+  }
+
+  .cyber-status .warn::before{
+    background:var(--gold);
+    box-shadow:0 0 8px rgba(200,155,92,.75);
+  }
+
+  /* Give cards more cyber-style polish */
+  .career-card,
+  .education-card,
+  .resource-card,
+  .update-card,
+  .about-panel,
+  .terminal{
+    position:relative;
+    overflow:hidden;
+  }
+
+  .career-card::after,
+  .education-card::after,
+  .resource-card::after,
+  .update-card::after,
+  .about-panel::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+      linear-gradient(90deg, transparent, rgba(95,191,154,.05), transparent);
+    transform:translateX(-120%);
+    transition:transform .55s ease;
+  }
+
+  .career-card:hover::after,
+  .education-card:hover::after,
+  .resource-card:hover::after,
+  .update-card:hover::after,
+  .about-panel:hover::after{
+    transform:translateX(120%);
+  }
+
+  .career-card:hover,
+  .education-card:hover,
+  .resource-card:hover,
+  .update-card:hover{
+    box-shadow:
+      0 14px 34px rgba(31,19,41,.10),
+      0 0 0 1px rgba(95,191,154,.14);
+    transform:translateY(-2px);
+  }
+
+  .career-card,
+  .education-card,
+  .resource-card,
+  .update-card{
+    transition:
+      transform .2s ease,
+      box-shadow .2s ease,
+      border-color .2s ease;
+  }
+
+  /* Cyber section heading accent */
+  section h2::after{
+    content:"";
+    display:inline-block;
+    width:34px;
+    height:2px;
+    margin-left:12px;
+    vertical-align:middle;
+    background:linear-gradient(90deg,var(--gold),var(--signal));
+    box-shadow:0 0 10px rgba(95,191,154,.25);
+  }
+
+  /* Terminal pulse */
+  .terminal{
+    box-shadow:
+      0 0 0 1px rgba(95,191,154,.05),
+      0 14px 36px rgba(0,0,0,.18);
+  }
+
+  .terminal-bar{
+    position:relative;
+  }
+
+  .terminal-bar::after{
+    content:"secure session";
+    margin-left:auto;
+    font-family:var(--mono);
+    font-size:.68rem;
+    color:var(--signal);
+    letter-spacing:.04em;
+    white-space:nowrap;
+  }
+
+  /* Repository / resource links feel like commands */
+  .resource-card a::before,
+  .update-link::before,
+  .featured-link::before,
+  .repo-cta a::before{
+    content:"> ";
+    color:var(--signal);
+  }
+
+  /* Mobile nav safeguard */
+  @media(max-width:820px){
+    .topnav .wrap{
+      align-items:flex-start;
+      height:auto;
+      padding-top:10px;
+      padding-bottom:10px;
+      flex-direction:column;
+    }
+
+    .nav-links{
+      width:100%;
+      overflow-x:auto;
+      padding-bottom:3px;
+      scrollbar-width:thin;
+    }
+  }
+
+
+  /* ---------- NEON TECH VISUAL PASS ---------- */
+  :root{
+    --neon-green:#67F5C0;
+    --neon-violet:#B98CFF;
+    --neon-blue:#72D9FF;
+  }
+
+  body{
+    background:
+      radial-gradient(circle at 12% 12%, rgba(185,140,255,.11), transparent 28rem),
+      radial-gradient(circle at 88% 34%, rgba(103,245,192,.08), transparent 30rem),
+      var(--bone);
+  }
+
+  /* Tech grid subtly visible across light sections */
+  section:not(.featured){
+    background-image:
+      linear-gradient(rgba(74,47,99,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74,47,99,.035) 1px, transparent 1px);
+    background-size:34px 34px;
+  }
+
+  .topnav{
+    box-shadow:
+      0 1px 0 rgba(103,245,192,.15),
+      0 8px 30px rgba(20,8,32,.28),
+      0 0 30px rgba(185,140,255,.08);
+    backdrop-filter:blur(14px);
+  }
+
+  .topnav .mark{
+    text-shadow:
+      0 0 7px rgba(228,205,160,.5),
+      0 0 18px rgba(185,140,255,.18);
+  }
+
+  .cursor{
+    background:var(--neon-green) !important;
+    box-shadow:
+      0 0 7px var(--neon-green),
+      0 0 16px rgba(103,245,192,.75),
+      0 0 28px rgba(103,245,192,.35) !important;
+  }
+
+  .hero{
+    background-image:
+      radial-gradient(circle at 70% 35%, rgba(185,140,255,.18), transparent 22rem),
+      radial-gradient(circle at 30% 70%, rgba(103,245,192,.08), transparent 26rem),
+      linear-gradient(rgba(114,217,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(114,217,255,.045) 1px, transparent 1px) !important;
+    background-size:auto,auto,34px 34px,34px 34px !important;
+    box-shadow:inset 0 -30px 70px rgba(103,245,192,.035);
+  }
+
+  .hero h1{
+    text-shadow:
+      0 0 18px rgba(185,140,255,.14),
+      0 0 36px rgba(103,245,192,.07);
+  }
+
+  .hero-lock,
+  .lock-visual,
+  .lock-wrap{
+    filter:
+      drop-shadow(0 0 12px rgba(228,205,160,.38))
+      drop-shadow(0 0 28px rgba(185,140,255,.18));
+  }
+
+  .badge{
+    background:rgba(255,255,255,.025);
+    box-shadow:
+      inset 0 0 12px rgba(185,140,255,.04),
+      0 0 14px rgba(103,245,192,.035);
+    transition:.2s ease;
+  }
+
+  .badge:hover{
+    border-color:rgba(103,245,192,.55);
+    box-shadow:
+      inset 0 0 15px rgba(103,245,192,.06),
+      0 0 18px rgba(103,245,192,.14);
+  }
+
+  section h2{
+    text-shadow:0 0 16px rgba(185,140,255,.10);
+  }
+
+  section h2::after{
+    width:48px !important;
+    box-shadow:
+      0 0 6px rgba(103,245,192,.6),
+      0 0 16px rgba(185,140,255,.35) !important;
+  }
+
+  .about-panel,
+  .career-card,
+  .education-card,
+  .skill-card,
+  .tools-row,
+  .resource-card,
+  .update-card,
+  .dir-item{
+    box-shadow:
+      0 12px 30px rgba(31,19,41,.07),
+      0 0 18px rgba(185,140,255,.035);
+  }
+
+  .career-card:hover,
+  .education-card:hover,
+  .resource-card:hover,
+  .update-card:hover,
+  .dir-item:hover,
+  .skill-card:hover{
+    border-color:rgba(103,245,192,.38);
+    box-shadow:
+      0 15px 38px rgba(31,19,41,.12),
+      0 0 0 1px rgba(103,245,192,.12),
+      0 0 22px rgba(103,245,192,.10),
+      0 0 34px rgba(185,140,255,.07);
+  }
+
+  .skill-card,
+  .dir-item{
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+
+  .skill-card:hover,
+  .dir-item:hover{
+    transform:translateY(-3px);
+  }
+
+  .chip{
+    background:rgba(185,140,255,.035);
+    box-shadow:inset 0 0 12px rgba(185,140,255,.035);
+    transition:.2s ease;
+  }
+
+  .chip:hover{
+    border-color:var(--neon-green);
+    box-shadow:
+      0 0 10px rgba(103,245,192,.18),
+      inset 0 0 10px rgba(103,245,192,.06);
+  }
+
+  .featured{
+    position:relative;
+    background:
+      radial-gradient(circle at 82% 30%, rgba(103,245,192,.08), transparent 24rem),
+      radial-gradient(circle at 20% 80%, rgba(185,140,255,.13), transparent 28rem),
+      var(--plum-800) !important;
+  }
+
+  .terminal{
+    border:1px solid rgba(103,245,192,.18);
+    box-shadow:
+      0 18px 45px rgba(10,4,16,.32),
+      0 0 20px rgba(103,245,192,.08),
+      0 0 42px rgba(185,140,255,.07) !important;
+  }
+
+  .terminal-bar{
+    box-shadow:inset 0 -1px 0 rgba(103,245,192,.10);
+  }
+
+  .terminal-bar::after,
+  .cyber-status span::before{
+    text-shadow:0 0 8px rgba(103,245,192,.8);
+  }
+
+  .featured-link,
+  .resource-card a,
+  .update-link,
+  .education-link{
+    text-shadow:0 0 8px rgba(103,245,192,.10);
+  }
+
+  .repo-cta a{
+    border:1px solid rgba(103,245,192,.22);
+    box-shadow:
+      0 0 15px rgba(103,245,192,.08),
+      inset 0 0 16px rgba(185,140,255,.05);
+  }
+
+  .repo-cta a:hover{
+    box-shadow:
+      0 0 18px rgba(103,245,192,.20),
+      0 0 32px rgba(185,140,255,.10);
+  }
+
+  footer{
+    position:relative;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(185,140,255,.10), transparent 22rem),
+      radial-gradient(circle at 85% 90%, rgba(103,245,192,.06), transparent 25rem),
+      var(--plum-950);
+    box-shadow:inset 0 1px 0 rgba(103,245,192,.12);
+  }
+
+  .portfolio-qr{
+    box-shadow:
+      0 0 0 1px rgba(103,245,192,.10),
+      0 0 22px rgba(185,140,255,.08);
+  }
+
+  .portfolio-qr img{
+    box-shadow:0 0 18px rgba(103,245,192,.14);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    body::before{ animation:none !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -900,6 +1311,12 @@
         <span class="badge">1 yr help desk</span>
         <span class="badge">Hack The Box</span>
       </div>
+    <div class="cyber-status" aria-label="Portfolio status">
+      <span>portfolio online</span>
+      <span>hands-on labs active</span>
+      <span class="warn">Security+ in progress</span>
+    </div>
+
     </div>
     <div class="hero-visual" aria-hidden="true">
       <svg class="lock-svg" viewBox="0 0 520 520">
@@ -1134,7 +1551,7 @@
         <div class="resource-icon" aria-hidden="true">&gt;_</div>
         <h3>Labs &amp; hands-on work</h3>
         <p>Explore my technical labs, write-ups, TLS/PKI work, SOC tools, malware analysis, and other hands-on security projects.</p>
-        <a href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/security">Explore security labs →</a>
+        <a href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/docs/templates">Browse lab templates →</a>
       </article>
     </div>
   </div>
