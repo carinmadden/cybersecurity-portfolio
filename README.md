@@ -16,6 +16,16 @@
 - I worked in a help desk position for a year
 - I have worked in hack the box for many hours to obtain a better understanding of network fundamentals
 
+
+## 🧪 TryHackMe
+
+I use TryHackMe to strengthen my hands-on cybersecurity skills through interactive labs, challenges, and guided learning paths.
+
+* Practice areas include network security, SOC fundamentals, Linux, incident response, and defensive security
+* Continuously building practical experience alongside my cybersecurity coursework and labs
+
+🔗 [View my TryHackMe profile](https://tryhackme.com/p/carinmadden20)
+
 ## 🎯 Goals
 - Land a SOC analyst, Incident response, or GRC role
 - Complete Security+ by the end of the year
