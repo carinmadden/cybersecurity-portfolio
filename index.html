@@ -1306,6 +1306,97 @@
   .tryhackme-link:hover{border-color:var(--neon-green);box-shadow:0 0 18px rgba(103,245,192,.2);transform:translateY(-1px);}
   @media(max-width:620px){.tryhackme-card{align-items:flex-start;flex-direction:column;}}
 
+
+.lab-project-card{margin-top:24px;padding:26px;border:1px solid rgba(103,245,192,.28);border-radius:20px;background:rgba(255,255,255,.76);box-shadow:0 14px 34px rgba(31,19,41,.09),0 0 25px rgba(103,245,192,.07)}
+.lab-project-card::before{content:"THREAT HUNT // LAB";display:block;margin-bottom:12px;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--signal)}
+.lab-project-card h3{margin:0 0 10px;color:var(--plum-800);font-family:var(--serif);font-size:1.35rem}
+.lab-project-card p{margin:0 0 15px;color:var(--ink-soft);font-size:.92rem;line-height:1.65}
+.lab-project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:17px}
+.lab-project-tags span{padding:6px 10px;border:1px solid rgba(74,47,99,.18);border-radius:999px;font-family:var(--mono);font-size:.72rem}
+.lab-project-card a{display:inline-block;text-decoration:none;font-family:var(--mono);font-size:.82rem;color:var(--plum-700);border:1px solid rgba(103,245,192,.36);border-radius:999px;padding:10px 14px}
+.lab-project-card a::before{content:"> ";color:var(--neon-green)}
+
+
+/* ---------- FEATURED PROJECT SCROLLER ---------- */
+.featured-scroll{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:minmax(82%, 940px);
+  gap:24px;
+  overflow-x:auto;
+  overscroll-behavior-inline:contain;
+  scroll-snap-type:inline mandatory;
+  padding:8px 4px 18px;
+  scrollbar-width:thin;
+  scrollbar-color:rgba(103,245,192,.45) rgba(255,255,255,.06);
+}
+.featured-scroll::-webkit-scrollbar{height:8px}
+.featured-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.05);border-radius:999px}
+.featured-scroll::-webkit-scrollbar-thumb{
+  background:linear-gradient(90deg,rgba(185,140,255,.6),rgba(103,245,192,.6));
+  border-radius:999px;
+}
+.featured-project-card{
+  scroll-snap-align:start;
+  min-width:0;
+}
+.featured-project-card .terminal{
+  height:100%;
+}
+.featured-panel{
+  padding:28px;
+}
+.featured-panel .label{
+  margin:0 0 10px;
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.08em;
+  color:var(--signal);
+}
+.featured-panel h3{
+  margin:0 0 14px;
+  color:#fff;
+  font-family:var(--serif);
+  font-size:clamp(1.5rem,2.8vw,2.2rem);
+  font-weight:500;
+}
+.featured-panel p{
+  color:#D9CEE8;
+  max-width:780px;
+}
+.project-skill-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:18px 0 20px;
+}
+.project-skill-row span{
+  padding:6px 9px;
+  border:1px solid rgba(103,245,192,.22);
+  border-radius:999px;
+  font-family:var(--mono);
+  font-size:.7rem;
+  color:#DDEFE8;
+  background:rgba(103,245,192,.04);
+  box-shadow:0 0 10px rgba(103,245,192,.035);
+}
+.scroll-hint{
+  margin-top:8px;
+  text-align:center;
+  font-family:var(--mono);
+  font-size:.74rem;
+  letter-spacing:.06em;
+  color:#B9AFC7;
+}
+.scroll-hint span{
+  color:var(--signal);
+  text-shadow:0 0 8px rgba(103,245,192,.55);
+}
+@media(max-width:760px){
+  .featured-scroll{grid-auto-columns:92%}
+  .featured-panel{padding:22px}
+}
+
 </style>
 </head>
 <body>
@@ -1597,27 +1688,87 @@
 </div>
 </section>
 
+
 <section id="projects" class="featured">
   <div class="wrap">
-    <h2>Featured build</h2>
-    <p class="section-intro">One project from the repository I keep coming back to.</p>
-    <div class="terminal">
-      <div class="terminal-bar">
-        <span></span><span></span><span></span>
-        <span class="path">~/cybersecurity-portfolio/security/tls-audits</span>
-      </div>
-      <div class="featured-panel">
-        <p class="label">security/tls-audits</p>
-        <h3>Standing up an internal Certificate Authority</h3>
-        <p>I built an internal CA from scratch and used it to issue and implement TLS across a lab environment, then went looking for where the configuration could still fail — writing up what I found along the way.</p>
-        <div class="featured-links">
-          <a class="featured-link" href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/security/tls-audits">View the write-up folder</a>
-          <a class="featured-link" href="https://github.com/carinmadden/cybersecurity-portfolio/blob/main/security/tls-audits/audit-1.md">Read audit-1.md</a>
+    <h2>Featured projects</h2>
+    <p class="section-intro">Scroll through selected hands-on cybersecurity projects covering threat hunting, vulnerability assessment, and TLS/PKI security.</p>
+
+    <div class="featured-scroll" aria-label="Featured cybersecurity projects">
+
+      <article class="featured-project-card">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span></span><span></span><span></span>
+            <span class="path">~/docs/certifications-and-skills/lab-reports/vulnerability-and-threat-hunting-labs</span>
+          </div>
+          <div class="featured-panel">
+            <p class="label">FEATURED // VULNERABILITY ASSESSMENT + THREAT HUNTING</p>
+            <h3>Vulnerability Assessment and Threat Hunting Lab</h3>
+            <p>
+              I assessed vulnerabilities across multiple enterprise systems using CVSS scores,
+              affected software versions, CISA KEV status, and system criticality. I identified
+              true positives, false positives, prioritized remediation, and documented compensating controls.
+            </p>
+            <p>
+              I then investigated attacker activity across MTB-WEB01 and MTB-FILE01 using network,
+              authentication, system, process, file, SSH, cron, and systemd evidence. I built an incident
+              timeline, mapped behavior to MITRE ATT&amp;CK, evaluated indicators with the Pyramid of Pain,
+              and created Sigma detection rules and response recommendations.
+            </p>
+            <div class="project-skill-row">
+              <span>Threat Hunting</span>
+              <span>Digital Forensics</span>
+              <span>CVSS</span>
+              <span>CISA KEV</span>
+              <span>MITRE ATT&amp;CK</span>
+              <span>Sigma</span>
+              <span>Incident Response</span>
+            </div>
+            <a class="featured-link" href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/docs/certifications-and-skills/lab-reports/vulnerability-and-threat-hunting-labs" target="_blank" rel="noopener">View full lab on GitHub</a>
+          </div>
         </div>
-      </div>
+      </article>
+
+      <article class="featured-project-card">
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span></span><span></span><span></span>
+            <span class="path">~/cybersecurity-portfolio/security/tls-audits</span>
+          </div>
+          <div class="featured-panel">
+            <p class="label">FEATURED // TLS + PKI SECURITY</p>
+            <h3>Internal CA &amp; TLS Security Audit</h3>
+            <p>
+              A hands-on PKI and TLS security project focused on building and reviewing an internal
+              certificate authority, investigating TLS configuration issues, and documenting certificate
+              and trust-chain security considerations.
+            </p>
+            <p>
+              The project demonstrates practical work with certificate authorities, TLS hardening,
+              configuration review, troubleshooting, and security documentation.
+            </p>
+            <div class="project-skill-row">
+              <span>PKI</span>
+              <span>TLS</span>
+              <span>Certificate Authorities</span>
+              <span>Security Auditing</span>
+              <span>Hardening</span>
+              <span>Documentation</span>
+            </div>
+            <a class="featured-link" href="https://github.com/carinmadden/cybersecurity-portfolio/tree/main/security/tls-audits" target="_blank" rel="noopener">View TLS audit project</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>←</span> scroll featured projects <span>→</span>
     </div>
   </div>
 </section>
+
 <section id="repo">
   <div class="wrap">
     <h2>Explore the repository</h2>
