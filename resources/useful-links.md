@@ -3,7 +3,7 @@
 These are useful links and resources that I have used for labs, research, and just general interesting cybersecurity tools.
 
 ## Labs
-There is a presentation in /docs/presentations that includes 5 cybersecurity lab resources.
+There is a presentation in /docs/presentations that includes 5 cybersecurity lab resources they are completely free.
  | Website | Link | Notes |
  | --- | --- | --- |
  | Hackthebox | https://www.hackthebox.com | A good resource for learning fundamentals, doing hands-on labs, and pentesting. |
