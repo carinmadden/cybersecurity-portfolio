@@ -1991,7 +1991,144 @@ c.addEventListener("keydown",e=>{if(e.key==="Enter"){go()}});
 const h=document.createElement("span");h.className="repo-open-hint";h.textContent="Open folder on GitHub →";c.appendChild(h);
 });});
 </script><script>
-(async function(){const box=document.getElementById("recent-github"),stamp=document.getElementById("recent-updated-time");if(!box)return;const base="https://api.github.com/repos/carinmadden/cybersecurity-portfolio",headers={"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"},esc=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])),ago=d=>{let n=Math.max(1,Math.floor((Date.now()-new Date(d))/1000));for(const [u,x] of [["year",31536000],["month",2592000],["day",86400],["hour",3600],["minute",60]]){let v=Math.floor(n/x);if(v>=1)return v+" "+u+(v==1?"":"s")+" ago"}return"just now"};try{const r=await fetch(base+"/commits?sha=main&per_page=15",{headers});if(!r.ok)throw 0;const cs=await r.json(),full=await Promise.all(cs.map(async c=>{try{let q=await fetch(base+"/commits/"+c.sha,{headers});return q.ok?await q.json():c}catch{return c}}));const filtered=full.filter(c=>{const files=c.files||[];const visible=files.filter(f=>!f.filename.startsWith("site/"));return visible.some(f=>f.status!=="removed")});box.innerHTML=filtered.slice(0,6).map((c,i)=>{let x=c.commit||{},d=x.author?.date||x.committer?.date||"",m=(x.message||"Repository update").split("\n")[0],visible=(c.files||[]).filter(f=>!f.filename.startsWith("site/")&&f.status!=="removed"),fs=visible.slice(0,3).map(f=>f.filename),more=visible.length>3?" +"+(visible.length-3)+" more":"";return `<a class="recent-live-card" href="${esc(c.html_url)}" target="_blank" rel="noopener"><div class="recent-live-meta"><span>${i?"UPDATE":"LATEST"}</span><span>${esc(ago(d))}</span></div><h3>${esc(m)}</h3><p>Recent lab, documentation, resource, or repository update.</p><div class="recent-live-files">${esc(fs.length?fs.join(" · ")+more:"View update on GitHub")}</div></a>`}).join("");stamp.textContent="Synced with GitHub • "+new Date().toLocaleString([],{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"})}catch(e){box.innerHTML='<div class="recent-live-status">Unable to load live updates right now. <a href="https://github.com/carinmadden/cybersecurity-portfolio/commits/main" target="_blank" rel="noopener">View on GitHub →</a></div>';stamp.textContent="GitHub feed temporarily unavailable"}})();
+(async function(){
+  const box = document.getElementById("recent-github");
+  const stamp = document.getElementById("recent-updated-time");
+  if (!box) return;
+
+  const API = "https://api.github.com/repos/carinmadden/cybersecurity-portfolio";
+  const CACHE_KEY = "carinPortfolioRecentV3";
+  const CACHE_TTL = 15 * 60 * 1000;
+  const headers = {
+    "Accept": "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28"
+  };
+
+  const esc = s => String(s || "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[c]);
+
+  const ago = d => {
+    const n = Math.max(1, Math.floor((Date.now() - new Date(d).getTime()) / 1000));
+    for (const [u,x] of [["year",31536000],["month",2592000],["day",86400],["hour",3600],["minute",60]]) {
+      const v = Math.floor(n/x);
+      if (v >= 1) return `${v} ${u}${v === 1 ? "" : "s"} ago`;
+    }
+    return "just now";
+  };
+
+  function render(items, source){
+    if (!items.length) {
+      box.innerHTML = `<div class="recent-live-status">No recent non-site additions are available yet. <a href="https://github.com/carinmadden/cybersecurity-portfolio" target="_blank" rel="noopener">View repository →</a></div>`;
+      return;
+    }
+    box.innerHTML = items.slice(0,6).map((item,i) => `
+      <a class="recent-live-card" href="${esc(item.url)}" target="_blank" rel="noopener">
+        <div class="recent-live-meta">
+          <span>${i === 0 ? "LATEST" : "UPDATE"}</span>
+          <span>${esc(ago(item.date))}</span>
+        </div>
+        <h3>${esc(item.message)}</h3>
+        <p>Recent lab, documentation, resource, or repository update.</p>
+        <div class="recent-live-files">${esc(item.files.length ? item.files.join(" · ") + (item.more ? ` +${item.more} more` : "") : "View update on GitHub")}</div>
+      </a>
+    `).join("");
+    if (stamp) {
+      stamp.textContent = source === "cache"
+        ? "Showing saved GitHub updates • refreshing automatically"
+        : "Synced with GitHub • " + new Date().toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+    }
+  }
+
+  function readCache(){
+    try {
+      const cached = JSON.parse(localStorage.getItem(CACHE_KEY));
+      if (cached && Array.isArray(cached.items)) return cached;
+    } catch(e) {}
+    return null;
+  }
+
+  function saveCache(items){
+    try {
+      localStorage.setItem(CACHE_KEY, JSON.stringify({saved:Date.now(), items}));
+    } catch(e) {}
+  }
+
+  // Immediately show the last successful result so the section does not look broken
+  // while GitHub is being contacted.
+  const cached = readCache();
+  if (cached) render(cached.items, "cache");
+
+  // If cache is fresh, use it and avoid unnecessary API requests.
+  if (cached && Date.now() - cached.saved < CACHE_TTL) return;
+
+  try {
+    // One request gets a pool of recent commits.
+    const response = await fetch(`${API}/commits?sha=main&per_page=12`, {
+      headers,
+      cache: "no-store"
+    });
+    if (!response.ok) throw new Error(`GitHub API ${response.status}`);
+    const commits = await response.json();
+
+    const results = [];
+
+    // Request details sequentially and stop as soon as six useful updates are found.
+    // This avoids the previous Promise.all burst of many simultaneous API requests.
+    for (const commit of commits) {
+      if (results.length >= 6) break;
+
+      try {
+        const detailResponse = await fetch(`${API}/commits/${commit.sha}`, {
+          headers,
+          cache: "no-store"
+        });
+        if (!detailResponse.ok) continue;
+
+        const detail = await detailResponse.json();
+        const files = Array.isArray(detail.files) ? detail.files : [];
+
+        // Hide all website activity and deleted files.
+        const visibleFiles = files.filter(file =>
+          !file.filename.startsWith("site/") &&
+          file.status !== "removed"
+        );
+
+        // Skip commits that contain only site activity and/or deletions.
+        if (!visibleFiles.length) continue;
+
+        const info = detail.commit || commit.commit || {};
+        const date = (info.author && info.author.date) ||
+                     (info.committer && info.committer.date) || "";
+
+        results.push({
+          url: detail.html_url || commit.html_url,
+          date,
+          message: (info.message || "Repository update").split("\n")[0],
+          files: visibleFiles.slice(0,3).map(file => file.filename),
+          more: Math.max(0, visibleFiles.length - 3)
+        });
+      } catch(e) {
+        // A single failed detail request should never break the whole feed.
+        continue;
+      }
+    }
+
+    if (results.length) {
+      saveCache(results);
+      render(results, "live");
+    } else if (!cached) {
+      box.innerHTML = `<div class="recent-live-status">Live updates are temporarily unavailable. <a href="https://github.com/carinmadden/cybersecurity-portfolio" target="_blank" rel="noopener">View the latest portfolio work on GitHub →</a></div>`;
+      if (stamp) stamp.textContent = "GitHub fallback";
+    }
+  } catch(e) {
+    // Keep cached cards visible when GitHub is unavailable or rate-limited.
+    if (!cached) {
+      box.innerHTML = `<div class="recent-live-status">Live updates are temporarily unavailable. <a href="https://github.com/carinmadden/cybersecurity-portfolio" target="_blank" rel="noopener">View the latest portfolio work on GitHub →</a></div>`;
+      if (stamp) stamp.textContent = "GitHub fallback";
+    }
+  }
+})();
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
