@@ -40,16 +40,17 @@ Cybersecurity is not just about protecting systems and data. It is also about pr
 
 ---
 
-### 📖 Technical Terminology
+### 📖 Technical Terms
 
-| Term | What I Learned |
-|---|---|
-| **SAML (Security Assertion Markup Language)** | An XML-based standard used to exchange authentication and authorization information between an identity provider and a service provider, commonly used for Single Sign-On (SSO). |
-| **LTS (Long-Term Support)** | A software release supported with security updates, bug fixes, and maintenance for an extended period, depending on the vendor. |
-| **Defense in Depth** | A security strategy that uses multiple layers of protection to defend systems, networks, and sensitive information. |
-| **Zombie Bots** | Compromised computers or smart devices remotely controlled by attackers, often as part of a botnet. |
-| **Certificate Pinning** | A security technique where an application restricts trust to a specific certificate or public key to help prevent unauthorized connections. |
+1. **SAML:** Security Assertion Markup language - It is used to exchange login and permission data between and identity provider and a service provider.
 
+2. **LTS:** Long term support - Software security patches and bug fixes that run for 2-5 years
+
+3. **Defense in Depth:** Strategy that uses multiple layers of security controls to protect data, networks, and systems.
+
+4. **Zombie Bots:** Computer or smart device secretly infected with malware that lets an outside hacker control it remotely.
+
+5. **Certificate pinning:** When an application is configured to trust only a specific certificate or public key.
 ---
 
 ### 🧠 Concepts That Expanded My Knowledge
@@ -63,8 +64,6 @@ I learned how different types of indicators help security analysts identify susp
 | **Atomic** | Individual, standalone indicators. | IP addresses, domain names |
 | **Computed** | Indicators derived through processing or analysis. | File hashes |
 | **Behavioral** | Patterns of activity that may indicate malicious behavior. | Repeated authentication attempts followed by unusual account activity |
-
-**Key Takeaway:** Understanding these indicators helps analysts investigate threats beyond individual alerts and identify broader attack patterns.
 
 #### 2. The Five Network Topologies
 
@@ -89,7 +88,6 @@ Topics included:
 - Reviewing unnecessary services and system configurations.
 - Applying security patches and updates.
 
-**Key Takeaway:** Effective Linux hardening requires multiple security controls working together rather than relying on a single configuration.
 
 #### 4. CPU Privilege Rings
 
@@ -98,8 +96,6 @@ I learned how operating systems use CPU privilege levels to separate sensitive s
 - **Ring 0 — Kernel Mode:** Highest privilege level, allowing direct access to critical system resources.
 - **Ring 1 and Ring 2:** Intermediate privilege levels that are rarely used by modern general-purpose operating systems.
 - **Ring 3 — User Mode:** Lowest privilege level, where most applications operate with restricted access.
-
-**Key Takeaway:** Privilege separation helps prevent applications from directly accessing protected system resources.
 
 #### 5. Types of Security Controls
 
@@ -118,8 +114,6 @@ I learned how security controls are categorized based on their implementation.
 - **Administrative Controls:** Policies, procedures, training, and governance practices that define expected security behavior.
 - **Technical Controls:** Security measures implemented through software, hardware, and system configurations.
 - **Physical Controls:** Measures that restrict physical access to systems, facilities, and sensitive equipment.
-
-**Key Takeaway:** A strong cybersecurity program combines all three categories to create a layered security strategy.
 
 #### 7. Incident Response Lifecycle
 
@@ -142,8 +136,6 @@ Preserving relevant evidence, removing malicious artifacts and attacker access, 
 **Lessons Learned**
 
 Reviewing the incident response process, identifying areas for improvement, documenting findings, and updating security procedures.
-
-**Key Takeaway:** Incident response is not simply about stopping an attack. It involves preserving evidence, coordinating response activities, restoring operations safely, and continuously improving security defenses.
 
 ---
 
