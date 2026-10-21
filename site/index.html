@@ -1599,6 +1599,63 @@ html{scroll-behavior:smooth}
   .floating-back-top{right:14px;bottom:14px;padding:10px 13px}
 }
 
+
+/* ---------- BOOTCAMP LEARNING JOURNAL ---------- */
+#bootcamp{background:linear-gradient(180deg,#f6f2f8,#eee7f5);}
+#bootcamp .boot-kicker{font:500 .76rem var(--mono);letter-spacing:.12em;color:var(--rose);margin-bottom:12px;}
+#bootcamp>.wrap>p{max-width:830px;color:var(--ink-soft);line-height:1.75;}
+#bootcamp .boot-group-title{font:500 clamp(1.35rem,2.4vw,1.85rem) var(--serif);color:var(--plum-800);margin:48px 0 15px;}
+#bootcamp .boot-quote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px;}
+#bootcamp .boot-quote,#bootcamp .boot-card,#bootcamp .boot-term{background:#fbf9fd;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 28px rgba(31,19,41,.055);}
+#bootcamp .boot-quote{margin:0;padding:25px 22px;border-top:3px solid var(--gold);}
+#bootcamp .boot-quote-text{font:500 1.16rem/1.4 var(--serif);color:var(--plum-800);margin:0 0 17px;}
+#bootcamp .boot-quote p:last-child{font-size:.89rem;color:var(--ink-soft);line-height:1.65;margin:0;}
+#bootcamp .boot-terms{display:grid;gap:10px;}
+#bootcamp .boot-term{display:grid;grid-template-columns:190px 1fr;gap:18px;padding:17px 21px;align-items:start;}
+#bootcamp .boot-term strong{color:var(--plum-800);font-family:var(--mono);font-size:.88rem;}
+#bootcamp .boot-term span{font-size:.92rem;line-height:1.65;}
+#bootcamp .boot-concepts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+#bootcamp .boot-card{padding:26px;min-width:0;}
+#bootcamp .boot-card h3{font:500 1.23rem var(--serif);color:var(--plum-800);margin:0 0 13px;}
+#bootcamp .boot-card p,#bootcamp .boot-card li{font-size:.92rem;line-height:1.7;color:var(--ink-soft);}
+#bootcamp .boot-card li{margin:8px 0;}
+#bootcamp .boot-card strong{color:var(--plum-800);}
+#bootcamp .boot-card ul{padding-left:21px;}
+#bootcamp .boot-wide{grid-column:1/-1;}
+#bootcamp .boot-table-scroll{overflow-x:auto;margin-top:18px;}
+#bootcamp table{width:100%;border-collapse:collapse;font-size:.87rem;min-width:510px;}
+#bootcamp th{background:var(--plum-800);color:#fff;text-align:left;font:500 .8rem var(--mono);}
+#bootcamp th,#bootcamp td{padding:13px 15px;border:1px solid var(--line);vertical-align:top;}
+#bootcamp tbody tr:nth-child(even){background:#f3edf8;}
+#bootcamp .boot-lifecycle{font:500 .83rem/1.8 var(--mono);color:var(--plum-800);padding:16px;border:1px solid rgba(95,191,154,.45);background:rgba(95,191,154,.08);border-radius:12px;margin:18px 0 22px;}
+#bootcamp .boot-step-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;}
+#bootcamp .boot-step{padding:17px 19px;background:#f3edf8;border-left:3px solid var(--signal);border-radius:10px;}
+#bootcamp .boot-step h4{font:600 .9rem var(--sans);color:var(--plum-800);margin:0 0 6px;}
+#bootcamp .boot-step p{margin:0;}
+#bootcamp .boot-growth{border-left:4px solid var(--gold);}
+#bootcamp .boot-card:hover,#bootcamp .boot-quote:hover{border-color:rgba(103,245,192,.5);box-shadow:0 14px 35px rgba(31,19,41,.1),0 0 20px rgba(103,245,192,.09);}
+/* Compact typography and spacing for the bootcamp section */
+#bootcamp h2{font-size:clamp(1.7rem,2.6vw,2.15rem);}
+#bootcamp>.wrap>p{font-size:.88rem;line-height:1.6;}
+#bootcamp .boot-group-title{font-size:clamp(1.12rem,2vw,1.45rem);margin:34px 0 12px;}
+#bootcamp .boot-quote{padding:19px 17px;}
+#bootcamp .boot-quote-text{font-size:1rem;line-height:1.4;margin-bottom:12px;}
+#bootcamp .boot-quote p:last-child{font-size:.81rem;line-height:1.55;}
+#bootcamp .boot-term{grid-template-columns:155px 1fr;gap:13px;padding:13px 16px;}
+#bootcamp .boot-term strong{font-size:.79rem;}
+#bootcamp .boot-term span{font-size:.83rem;line-height:1.55;}
+#bootcamp .boot-card{padding:20px;}
+#bootcamp .boot-card h3{font-size:1.06rem;margin-bottom:10px;}
+#bootcamp .boot-card p,#bootcamp .boot-card li{font-size:.83rem;line-height:1.58;}
+#bootcamp .boot-card li{margin:5px 0;}
+#bootcamp table{font-size:.78rem;}
+#bootcamp th{font-size:.73rem;}
+#bootcamp th,#bootcamp td{padding:10px 11px;}
+#bootcamp .boot-lifecycle{font-size:.75rem;padding:12px;}
+#bootcamp .boot-step{padding:13px 15px;}
+#bootcamp .boot-step h4{font-size:.83rem;}
+@media(max-width:760px){#bootcamp .boot-quote-grid,#bootcamp .boot-concepts,#bootcamp .boot-step-grid{grid-template-columns:1fr;}#bootcamp .boot-term{grid-template-columns:1fr;gap:5px;}#bootcamp .boot-card{padding:21px;}}
+
 </style>
 </head>
 <body id="top">
@@ -1610,7 +1667,6 @@ html{scroll-behavior:smooth}
 <li><a href="#career">experience</a></li>
 <li><a href="#education">education</a></li>
 <li><a href="#skills">skills</a></li>
-<li><a href="#recent-updates">recent</a></li>
 <li><a href="#resources-hub">templates</a></li>
 <li><a href="#projects">projects</a></li>
 <li><a href="#repo">repositories</a></li>
@@ -1808,7 +1864,7 @@ html{scroll-behavior:smooth}
 </div>
 </div>
 </section>
-<section id="recent-updates"><div class="wrap"><h2>Recently added</h2><p class="section-intro">Automatically updated from the latest changes in my GitHub portfolio.</p><div aria-live="polite" class="recent-live-grid" id="recent-github"><div class="recent-live-status">Loading latest portfolio updates...</div></div><div class="recent-live-footer"><span id="recent-updated-time">Live GitHub feed</span><a href="https://github.com/carinmadden/cybersecurity-portfolio/commits/main" rel="noopener" target="_blank">View full commit history →</a></div></div></section>
+<section id="bootcamp" class="bootcamp-section"><div class="wrap"><div class="boot-kicker">LEARNING JOURNAL // BOOTCAMP</div><h2>🎓 What I Learned from Bootcamp</h2><p>My cybersecurity bootcamp has expanded my understanding of security operations, incident response, network security, system hardening, and risk management within financial institutions.</p><p>Throughout the program, I&#x27;ve gained hands-on technical experience while developing a stronger understanding of cybersecurity principles, terminology, and defensive strategies.</p><h3 class="boot-group-title">💬 Lessons That Stuck With Me</h3><p>These are three important lessons that have shaped how I approach cybersecurity:</p><div class="boot-quote-grid"><blockquote class="boot-quote"><p class="boot-quote-text">“Document throughout, not at the end.”</p><p>Documentation should be maintained throughout an investigation or project to ensure accuracy, preserve evidence, and create a reliable record of actions taken.</p></blockquote><blockquote class="boot-quote"><p class="boot-quote-text">“It&#x27;s not if you get hacked, it&#x27;s when.”</p><p>Organizations should prepare for security incidents by establishing effective detection, response, and recovery capabilities.</p></blockquote><blockquote class="boot-quote"><p class="boot-quote-text">“The number one rule in cybersecurity is to protect human life.”</p><p>Cybersecurity is not just about protecting systems and data. It is also about protecting the people who depend on those systems.</p></blockquote></div><h3 class="boot-group-title">📖 Technical Terms</h3><div class="boot-terms"><div class="boot-term"><strong>SAML:</strong><span>Security Assertion Markup language - It is used to exchange login and permission data between and identity provider and a service provider.</span></div><div class="boot-term"><strong>LTS:</strong><span>Long term support - Software security patches and bug fixes that run for 2-5 years</span></div><div class="boot-term"><strong>Defense in Depth:</strong><span>Strategy that uses multiple layers of security controls to protect data, networks, and systems.</span></div><div class="boot-term"><strong>Zombie Bots:</strong><span>Computer or smart device secretly infected with malware that lets an outside hacker control it remotely.</span></div><div class="boot-term"><strong>Certificate pinning:</strong><span>When an application is configured to trust only a specific certificate or public key.</span></div></div><h3 class="boot-group-title">🧠 Concepts That Expanded My Knowledge</h3><div class="boot-concepts"><article class="boot-card boot-wide"><h3>1. Indicators of Compromise (IOCs)</h3><p>I learned how different types of indicators help security analysts identify suspicious activity and investigate potential threats.</p><div class="boot-table-scroll"><table><thead><tr><th>Indicator Type</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><strong>Atomic</strong></td><td>Individual, standalone indicators.</td><td>IP addresses, domain names</td></tr><tr><td><strong>Computed</strong></td><td>Indicators derived through processing or analysis.</td><td>File hashes</td></tr><tr><td><strong>Behavioral</strong></td><td>Patterns of activity that may indicate malicious behavior.</td><td>Repeated authentication attempts followed by unusual account activity</td></tr></tbody></table></div></article><article class="boot-card "><h3>2. The Five Network Topologies</h3><p>Understanding network topologies helped me visualize how devices communicate and how network architecture affects security.</p><ul><li><strong>Star Topology:</strong> Devices connect to a central switch or hub.</li><li><strong>Bus Topology:</strong> Devices share a single communication backbone.</li><li><strong>Ring Topology:</strong> Devices form a closed loop, with each device connected to two neighboring devices.</li><li><strong>Mesh Topology:</strong> Devices have multiple interconnected communication paths.</li><li><strong>Hybrid Topology:</strong> Combines multiple network topologies to meet organizational requirements.</li></ul></article><article class="boot-card "><h3>3. Securing Linux Systems</h3><p>One of the most valuable technical skills I developed was understanding how to harden Linux systems and reduce their attack surface.</p><p>Topics included:</p><ul><li>Configuring SSH security and restricting remote access.</li><li>Implementing password policies and account permissions.</li><li>Configuring host-based firewalls.</li><li>Enabling audit logging and monitoring system activity.</li><li>Reviewing unnecessary services and system configurations.</li><li>Applying security patches and updates.</li></ul></article><article class="boot-card "><h3>4. CPU Privilege Rings</h3><p>I learned how operating systems use CPU privilege levels to separate sensitive system operations from regular user applications.</p><ul><li><strong>Ring 0 — Kernel Mode:</strong> Highest privilege level, allowing direct access to critical system resources.</li><li><strong>Ring 1 and Ring 2:</strong> Intermediate privilege levels that are rarely used by modern general-purpose operating systems.</li><li><strong>Ring 3 — User Mode:</strong> Lowest privilege level, where most applications operate with restricted access.</li></ul></article><article class="boot-card "><h3>5. Types of Security Controls</h3><p>I learned how organizations use different security controls to prevent, detect, and respond to security incidents.</p><div class="boot-table-scroll"><table><thead><tr><th>Control</th><th>Purpose</th><th>Example</th></tr></thead><tbody><tr><td><strong>Preventive</strong></td><td>Stops or reduces the likelihood of security incidents.</td><td>Firewalls, MFA, access restrictions</td></tr><tr><td><strong>Detective</strong></td><td>Identifies suspicious activity or security incidents.</td><td>SIEM alerts, intrusion detection systems</td></tr><tr><td><strong>Corrective</strong></td><td>Addresses security issues and helps restore normal operations.</td><td>Malware removal, patching, system restoration</td></tr></tbody></table></div></article><article class="boot-card "><h3>6. Administrative, Technical, and Physical Controls</h3><p>I learned how security controls are categorized based on their implementation.</p><ul><li><strong>Administrative Controls:</strong> Policies, procedures, training, and governance practices that define expected security behavior.</li><li><strong>Technical Controls:</strong> Security measures implemented through software, hardware, and system configurations.</li><li><strong>Physical Controls:</strong> Measures that restrict physical access to systems, facilities, and sensitive equipment.</li></ul></article><article class="boot-card boot-wide"><h3>7. Incident Response Lifecycle</h3><p>Learning the incident response lifecycle helped me understand how security teams systematically investigate, contain, and recover from cybersecurity incidents.</p><div class="boot-lifecycle">Preparation → Identification → Containment → Eradication → Recovery → Lessons Learned</div><div class="boot-step-grid"><div class="boot-step"><h4>Preparation</h4><p>Establishing incident response plans, tools, procedures, and team responsibilities before an incident occurs.</p></div><div class="boot-step"><h4>Identification and Containment</h4><p>Investigating suspicious activity, determining which systems may be compromised, identifying the scope of an incident, and preventing further damage.</p></div><div class="boot-step"><h4>Eradication and Recovery</h4><p>Preserving relevant evidence, removing malicious artifacts and attacker access, addressing vulnerabilities, and restoring systems to a secure operational state.</p></div><div class="boot-step"><h4>Lessons Learned</h4><p>Reviewing the incident response process, identifying areas for improvement, documenting findings, and updating security procedures.</p></div></div></article></div><h3 class="boot-group-title">🚀 How This Bootcamp Has Helped Me Grow</h3><p>This bootcamp has helped me connect cybersecurity theory with practical application, especially in environments that require strong security controls and careful risk management.</p><p>Some of my biggest areas of growth include:</p><article class="boot-card boot-growth"><h3>Areas of Growth</h3><ul><li><strong>Technical Confidence:</strong> Becoming more comfortable working with Linux, Windows Server, security tools, and command-line environments.</li><li><strong>Analytical Thinking:</strong> Developing a structured approach to investigating alerts, identifying indicators, and evaluating potential threats.</li><li><strong>Incident Response:</strong> Understanding how security incidents progress from initial detection through containment, recovery, and post-incident review.</li><li><strong>Documentation:</strong> Recognizing the importance of maintaining accurate records throughout investigations and technical projects.</li><li><strong>Security Mindset:</strong> Evaluating security decisions based on risk, business impact, and the protection of people and critical systems.</li></ul></article></div></section>
 <section id="resources-hub">
 <div class="wrap">
 <h2>Templates &amp; lab resources</h2>
@@ -1969,124 +2025,6 @@ c.addEventListener("keydown",e=>{if(e.key==="Enter"){go()}});
 const h=document.createElement("span");h.className="repo-open-hint";h.textContent="Open folder on GitHub →";c.appendChild(h);
 });});
 </script><script>
-(async function(){
-  const box = document.getElementById("recent-github");
-  const stamp = document.getElementById("recent-updated-time");
-  if (!box) return;
-
-  const base = "https://api.github.com/repos/carinmadden/cybersecurity-portfolio";
-  const cacheKey = "carinRecentStableV1";
-  const paths = [
-    "docs",
-    "grc",
-    "resources",
-    "security",
-    "README.md"
-  ];
-
-  const esc = s => String(s || "").replace(/[&<>"']/g, c => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-  })[c]);
-
-  const ago = d => {
-    const seconds = Math.max(1, Math.floor((Date.now() - new Date(d).getTime()) / 1000));
-    for (const [unit,size] of [["year",31536000],["month",2592000],["day",86400],["hour",3600],["minute",60]]) {
-      const value = Math.floor(seconds / size);
-      if (value >= 1) return `${value} ${unit}${value === 1 ? "" : "s"} ago`;
-    }
-    return "just now";
-  };
-
-  function render(items, cached=false){
-    box.innerHTML = items.slice(0,6).map((item,i) => `
-      <a class="recent-live-card" href="${esc(item.url)}" target="_blank" rel="noopener">
-        <div class="recent-live-meta">
-          <span>${i === 0 ? "LATEST" : "UPDATE"}</span>
-          <span>${esc(ago(item.date))}</span>
-        </div>
-        <h3>${esc(item.message)}</h3>
-        <p>Recent portfolio work outside of the website files.</p>
-        <div class="recent-live-files">${esc(item.area)}</div>
-      </a>
-    `).join("");
-
-    if (stamp) {
-      stamp.textContent = cached
-        ? "Showing saved GitHub updates"
-        : "Synced with GitHub • " + new Date().toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
-    }
-  }
-
-  let saved = null;
-  try {
-    saved = JSON.parse(localStorage.getItem(cacheKey));
-    if (saved && Array.isArray(saved.items) && saved.items.length) render(saved.items, true);
-  } catch(e) {}
-
-  try {
-    const requests = paths.map(path =>
-      fetch(`${base}/commits?sha=main&path=${encodeURIComponent(path)}&per_page=4`, {
-        headers: {"Accept":"application/vnd.github+json"}
-      }).then(r => {
-        if (!r.ok) throw new Error("GitHub request failed");
-        return r.json().then(data => ({path,data}));
-      })
-    );
-
-    const settled = await Promise.allSettled(requests);
-    const bySha = new Map();
-
-    settled.forEach(result => {
-      if (result.status !== "fulfilled") return;
-      const {path,data} = result.value;
-      data.forEach(c => {
-        const info = c.commit || {};
-        const message = (info.message || "Repository update").split("\n")[0];
-        // Do not display obvious deletion/removal commits.
-        if (/\b(delete|deleted|deleting|remove|removed|removing)\b/i.test(message)) return;
-
-        const date = (info.author && info.author.date) ||
-                     (info.committer && info.committer.date) || "";
-
-        if (!bySha.has(c.sha)) {
-          bySha.set(c.sha, {
-            sha:c.sha,
-            url:c.html_url,
-            message,
-            date,
-            areas:new Set()
-          });
-        }
-        bySha.get(c.sha).areas.add(path === "README.md" ? "README" : path + "/");
-      });
-    });
-
-    const items = Array.from(bySha.values())
-      .map(x => ({
-        url:x.url,
-        message:x.message,
-        date:x.date,
-        area:Array.from(x.areas).join(" · ")
-      }))
-      .sort((a,b) => new Date(b.date) - new Date(a.date))
-      .slice(0,6);
-
-    if (items.length) {
-      render(items, false);
-      try { localStorage.setItem(cacheKey, JSON.stringify({items, saved:Date.now()})); } catch(e) {}
-    } else if (!saved || !saved.items || !saved.items.length) {
-      box.innerHTML = `<div class="recent-live-status">Recent updates could not be loaded right now. <a href="https://github.com/carinmadden/cybersecurity-portfolio" target="_blank" rel="noopener">View my GitHub portfolio →</a></div>`;
-      if (stamp) stamp.textContent = "GitHub fallback";
-    }
-  } catch(e) {
-    if (!saved || !saved.items || !saved.items.length) {
-      box.innerHTML = `<div class="recent-live-status">Recent updates could not be loaded right now. <a href="https://github.com/carinmadden/cybersecurity-portfolio" target="_blank" rel="noopener">View my GitHub portfolio →</a></div>`;
-      if (stamp) stamp.textContent = "GitHub fallback";
-    }
-  }
-})();
-</script>
-<script>
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("main section, body > section").forEach(section => { return;
     if (section.querySelector(".section-back-top")) return;
@@ -2130,4 +2068,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 </body>
-</html></h1>
+</html>
+</h1>
